@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **os** | **String** |  | [optional] 
 **agent** | [**InstanceAgentState**](InstanceAgentState.md) |  | [optional] 
 **netmon** | [**InstanceNetmonState**](InstanceNetmonState.md) |  | [optional] 
+**netdump** | [**InstanceNetdumpState**](InstanceNetdumpState.md) |  | [optional] 
 **exposePort** | **String** |  | [optional] 
 **fault** | **Boolean** |  | [optional] 
 **patches** | **[String]** |  | [optional] 

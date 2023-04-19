@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **name** | **String** | the name of the device | [optional] 
 **state** | **String** | the desired state of the device | [optional] 
 **bootOptions** | [**InstanceBootOptions**](InstanceBootOptions.md) |  | [optional] 
-**proxy** | **String** |  | [optional] 
+**proxy** | [**[ProxyConfig]**](ProxyConfig.md) |  | [optional] 
 
 
 

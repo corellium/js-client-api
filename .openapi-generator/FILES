@@ -47,6 +47,7 @@ docs/InstanceBootOptionsAdditionalTag.md
 docs/InstanceConsoleEndpoint.md
 docs/InstanceCreateOptions.md
 docs/InstanceInput.md
+docs/InstanceNetdumpState.md
 docs/InstanceNetmonState.md
 docs/InstanceReturn.md
 docs/InstanceServices.md
@@ -63,6 +64,7 @@ docs/KernelThread.md
 docs/MediaPlayBody.md
 docs/Model.md
 docs/ModelSoftware.md
+docs/NetdumpFilter.md
 docs/PasswordChangeBody.md
 docs/PasswordResetBody.md
 docs/PatchInstanceOptions.md
@@ -73,6 +75,7 @@ docs/ProjectKey.md
 docs/ProjectQuota.md
 docs/ProjectSettings.md
 docs/ProjectUsage.md
+docs/ProxyConfig.md
 docs/RateInfo.md
 docs/ResetLinkBody.md
 docs/Role.md
@@ -151,6 +154,7 @@ src/model/InstanceBootOptionsAdditionalTag.js
 src/model/InstanceConsoleEndpoint.js
 src/model/InstanceCreateOptions.js
 src/model/InstanceInput.js
+src/model/InstanceNetdumpState.js
 src/model/InstanceNetmonState.js
 src/model/InstanceReturn.js
 src/model/InstanceServices.js
@@ -167,6 +171,7 @@ src/model/KernelThread.js
 src/model/MediaPlayBody.js
 src/model/Model.js
 src/model/ModelSoftware.js
+src/model/NetdumpFilter.js
 src/model/PasswordChangeBody.js
 src/model/PasswordResetBody.js
 src/model/PatchInstanceOptions.js
@@ -177,6 +182,7 @@ src/model/ProjectKey.js
 src/model/ProjectQuota.js
 src/model/ProjectSettings.js
 src/model/ProjectUsage.js
+src/model/ProxyConfig.js
 src/model/RateInfo.js
 src/model/ResetLinkBody.js
 src/model/Role.js
@@ -250,6 +256,7 @@ test/model/InstanceBootOptionsAdditionalTag.spec.js
 test/model/InstanceConsoleEndpoint.spec.js
 test/model/InstanceCreateOptions.spec.js
 test/model/InstanceInput.spec.js
+test/model/InstanceNetdumpState.spec.js
 test/model/InstanceNetmonState.spec.js
 test/model/InstanceReturn.spec.js
 test/model/InstanceServices.spec.js
@@ -266,6 +273,7 @@ test/model/KernelThread.spec.js
 test/model/MediaPlayBody.spec.js
 test/model/Model.spec.js
 test/model/ModelSoftware.spec.js
+test/model/NetdumpFilter.spec.js
 test/model/PasswordChangeBody.spec.js
 test/model/PasswordResetBody.spec.js
 test/model/PatchInstanceOptions.spec.js
@@ -276,6 +284,7 @@ test/model/ProjectKey.spec.js
 test/model/ProjectQuota.spec.js
 test/model/ProjectSettings.spec.js
 test/model/ProjectUsage.spec.js
+test/model/ProxyConfig.spec.js
 test/model/RateInfo.spec.js
 test/model/ResetLinkBody.spec.js
 test/model/Role.spec.js

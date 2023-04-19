@@ -65,12 +65,10 @@ Method | HTTP request | Description
 [**v1GetInstanceGpios**](CorelliumApi.md#v1GetInstanceGpios) | **GET** /v1/instances/{instanceId}/gpios | Get Instance GPIOs
 [**v1GetInstancePanics**](CorelliumApi.md#v1GetInstancePanics) | **GET** /v1/instances/{instanceId}/panics | Get Panics
 [**v1GetInstancePeripherals**](CorelliumApi.md#v1GetInstancePeripherals) | **GET** /v1/instances/{instanceId}/peripherals | Get Instance Peripherals
-[**v1GetInstanceQuickConnectCommand**](CorelliumApi.md#v1GetInstanceQuickConnectCommand) | **GET** /v1/instances/{instanceId}/quickConnectCommand | Recommended SSH Command for Quick Connect
 [**v1GetInstanceRate**](CorelliumApi.md#v1GetInstanceRate) | **GET** /v1/instances/{instanceId}/rate | Get rate information
 [**v1GetInstanceScreenshot**](CorelliumApi.md#v1GetInstanceScreenshot) | **GET** /v1/instances/{instanceId}/screenshot.{format} | Get Instance Screenshot
 [**v1GetInstanceSnapshot**](CorelliumApi.md#v1GetInstanceSnapshot) | **GET** /v1/instances/{instanceId}/snapshots/{snapshotId} | Get Instance Snapshot
 [**v1GetInstanceSnapshots**](CorelliumApi.md#v1GetInstanceSnapshots) | **GET** /v1/instances/{instanceId}/snapshots | Get Instance Snapshots
-[**v1GetInstanceState**](CorelliumApi.md#v1GetInstanceState) | **GET** /v1/instances/{instanceId}/state | Get state of Instance
 [**v1GetInstances**](CorelliumApi.md#v1GetInstances) | **GET** /v1/instances | Get Instances
 [**v1GetModelSoftware**](CorelliumApi.md#v1GetModelSoftware) | **GET** /v1/models/{model}/software | Get Software for Model
 [**v1GetModels**](CorelliumApi.md#v1GetModels) | **GET** /v1/models | Get Supported Models
@@ -82,6 +80,8 @@ Method | HTTP request | Description
 [**v1GetResetLinkInfo**](CorelliumApi.md#v1GetResetLinkInfo) | **GET** /v1/users/reset-link-info | Send Password Reset Link Info
 [**v1GetSnapshot**](CorelliumApi.md#v1GetSnapshot) | **GET** /v1/snapshots/{snapshotId} | Get Snapshot
 [**v1InstancesInstanceIdMessagePost**](CorelliumApi.md#v1InstancesInstanceIdMessagePost) | **POST** /v1/instances/{instanceId}/message | Receive a message on an iOS vm
+[**v1InstancesInstanceIdNetdumpPcapGet**](CorelliumApi.md#v1InstancesInstanceIdNetdumpPcapGet) | **GET** /v1/instances/{instanceId}/netdump.pcap | Download a netdump pcap file
+[**v1InstancesInstanceIdNetworkMonitorPcapGet**](CorelliumApi.md#v1InstancesInstanceIdNetworkMonitorPcapGet) | **GET** /v1/instances/{instanceId}/networkMonitor.pcap | Download a Network Monitor pcap file
 [**v1Kcrange**](CorelliumApi.md#v1Kcrange) | **GET** /v1/instances/{instanceId}/btrace-kcrange | Get Kernel extension ranges
 [**v1ListThreads**](CorelliumApi.md#v1ListThreads) | **GET** /v1/instances/{instanceId}/strace/thread-list | Get Running Threads (CoreTrace)
 [**v1MediaPlay**](CorelliumApi.md#v1MediaPlay) | **POST** /v1/instances/{instanceId}/media/play | Start playing media
@@ -97,6 +97,7 @@ Method | HTTP request | Description
 [**v1RemoveUserRoleFromProject**](CorelliumApi.md#v1RemoveUserRoleFromProject) | **DELETE** /v1/roles/projects/{projectId}/users/{userId}/roles/{roleId} | Remove user role from project
 [**v1RenameInstanceSnapshot**](CorelliumApi.md#v1RenameInstanceSnapshot) | **PATCH** /v1/instances/{instanceId}/snapshots/{snapshotId} | Rename a Snapshot
 [**v1ResetUserPassword**](CorelliumApi.md#v1ResetUserPassword) | **POST** /v1/users/reset-password | Reset User Password
+[**v1RestoreBackup**](CorelliumApi.md#v1RestoreBackup) | **POST** /v1/instances/{instanceId}/restoreBackup | Restore backup
 [**v1RestoreInstanceSnapshot**](CorelliumApi.md#v1RestoreInstanceSnapshot) | **POST** /v1/instances/{instanceId}/snapshots/{snapshotId}/restore | Restore a Snapshot
 [**v1Roles**](CorelliumApi.md#v1Roles) | **GET** /v1/roles | Get all roles
 [**v1RotateInstance**](CorelliumApi.md#v1RotateInstance) | **POST** /v1/instances/{instanceId}/rotate | Rotate device to specified orientation
@@ -108,10 +109,12 @@ Method | HTTP request | Description
 [**v1StartCoreTrace**](CorelliumApi.md#v1StartCoreTrace) | **POST** /v1/instances/{instanceId}/strace/enable | Start CoreTrace on an instance
 [**v1StartHyperTrace**](CorelliumApi.md#v1StartHyperTrace) | **POST** /v1/instances/{instanceId}/btrace/enable | Start HyperTrace on an instance
 [**v1StartInstance**](CorelliumApi.md#v1StartInstance) | **POST** /v1/instances/{instanceId}/start | Start an Instance
+[**v1StartNetdump**](CorelliumApi.md#v1StartNetdump) | **POST** /v1/instances/{instanceId}/netdump/enable | Start Enhanced Network Monitor on an instance.
 [**v1StartNetworkMonitor**](CorelliumApi.md#v1StartNetworkMonitor) | **POST** /v1/instances/{instanceId}/sslsplit/enable | Start Network Monitor on an instance.
 [**v1StopCoreTrace**](CorelliumApi.md#v1StopCoreTrace) | **POST** /v1/instances/{instanceId}/strace/disable | Stop CoreTrace on an instance.
 [**v1StopHyperTrace**](CorelliumApi.md#v1StopHyperTrace) | **POST** /v1/instances/{instanceId}/btrace/disable | Stop HyperTrace on an instance.
 [**v1StopInstance**](CorelliumApi.md#v1StopInstance) | **POST** /v1/instances/{instanceId}/stop | Stop an Instance
+[**v1StopNetdump**](CorelliumApi.md#v1StopNetdump) | **POST** /v1/instances/{instanceId}/netdump/disable | Stop Enhanced Network Monitor on an instance.
 [**v1StopNetworkMonitor**](CorelliumApi.md#v1StopNetworkMonitor) | **POST** /v1/instances/{instanceId}/sslsplit/disable | Stop Network Monitor on an instance.
 [**v1TeamChange**](CorelliumApi.md#v1TeamChange) | **PATCH** /v1/teams/{teamId} | Update team
 [**v1TeamCreate**](CorelliumApi.md#v1TeamCreate) | **POST** /v1/teams | Create team
@@ -127,11 +130,8 @@ Method | HTTP request | Description
 [**v1UserAgreeTerms**](CorelliumApi.md#v1UserAgreeTerms) | **POST** /v1/users/agree | Consent to the current terms and conditions
 [**v1UsersChangePasswordPost**](CorelliumApi.md#v1UsersChangePasswordPost) | **POST** /v1/users/change-password | Change User Password
 [**v1UsersLogin**](CorelliumApi.md#v1UsersLogin) | **POST** /v1/users/login | Log In
-[**v1WebPlayerAllowedDomains**](CorelliumApi.md#v1WebPlayerAllowedDomains) | **GET** /v1/webplayer/allowedDomains | Retrieve the list of allowed domains for all Webplayer sessions
-[**v1WebPlayerCreateSession**](CorelliumApi.md#v1WebPlayerCreateSession) | **POST** /v1/webplayer | Create a new Webplayer Session
-[**v1WebPlayerDestroySession**](CorelliumApi.md#v1WebPlayerDestroySession) | **DELETE** /v1/webplayer/{sessionId} | Tear down a Webplayer Session
-[**v1WebPlayerListSessions**](CorelliumApi.md#v1WebPlayerListSessions) | **GET** /v1/webplayer | List all Webplayer sessions
-[**v1WebPlayerSessionInfo**](CorelliumApi.md#v1WebPlayerSessionInfo) | **GET** /v1/webplayer/{sessionId} | Retrieve Webplayer Session Information
+[**v2GetInstanceQuickConnectCommand**](CorelliumApi.md#v2GetInstanceQuickConnectCommand) | **GET** /v2/instances/{instanceId}/quickConnectCommand | Recommended SSH Command for Quick Connect
+[**v2GetInstanceState**](CorelliumApi.md#v2GetInstanceState) | **GET** /v2/instances/{instanceId}/state | Get state of Instance
 
 
 
@@ -3083,52 +3083,6 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## v1GetInstanceQuickConnectCommand
-
-> String v1GetInstanceQuickConnectCommand(instanceId)
-
-Recommended SSH Command for Quick Connect
-
-### Example
-
-```javascript
-import CorelliumClient from '@corellium/client-api';
-let defaultClient = CorelliumClient.ApiClient.instance;
-// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new CorelliumClient.CorelliumApi();
-let instanceId = "instanceId_example"; // String | Instance ID - uuid
-apiInstance.v1GetInstanceQuickConnectCommand(instanceId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **instanceId** | **String**| Instance ID - uuid | 
-
-### Return type
-
-**String**
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
 ## v1GetInstanceRate
 
 > RateInfo v1GetInstanceRate(instanceId)
@@ -3312,52 +3266,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[Snapshot]**](Snapshot.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## v1GetInstanceState
-
-> InstanceState v1GetInstanceState(instanceId)
-
-Get state of Instance
-
-### Example
-
-```javascript
-import CorelliumClient from '@corellium/client-api';
-let defaultClient = CorelliumClient.ApiClient.instance;
-// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new CorelliumClient.CorelliumApi();
-let instanceId = "instanceId_example"; // String | Instance ID - uuid
-apiInstance.v1GetInstanceState(instanceId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **instanceId** | **String**| Instance ID - uuid | 
-
-### Return type
-
-[**InstanceState**](InstanceState.md)
 
 ### Authorization
 
@@ -3881,6 +3789,98 @@ null (empty response body)
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+
+## v1InstancesInstanceIdNetdumpPcapGet
+
+> File v1InstancesInstanceIdNetdumpPcapGet(instanceId)
+
+Download a netdump pcap file
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+apiInstance.v1InstancesInstanceIdNetdumpPcapGet(instanceId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **String**| Instance ID - uuid | 
+
+### Return type
+
+**File**
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.tcpdump.pcap, application/json
+
+
+## v1InstancesInstanceIdNetworkMonitorPcapGet
+
+> File v1InstancesInstanceIdNetworkMonitorPcapGet(instanceId)
+
+Download a Network Monitor pcap file
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+apiInstance.v1InstancesInstanceIdNetworkMonitorPcapGet(instanceId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **String**| Instance ID - uuid | 
+
+### Return type
+
+**File**
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/vnd.tcpdump.pcap, application/json
 
 
 ## v1Kcrange
@@ -4613,6 +4613,52 @@ No authorization required
 - **Accept**: application/json
 
 
+## v1RestoreBackup
+
+> v1RestoreBackup(instanceId)
+
+Restore backup
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+apiInstance.v1RestoreBackup(instanceId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **String**| Instance ID - uuid | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## v1RestoreInstanceSnapshot
 
 > v1RestoreInstanceSnapshot(instanceId, snapshotId)
@@ -5159,6 +5205,56 @@ null (empty response body)
 - **Accept**: application/json
 
 
+## v1StartNetdump
+
+> v1StartNetdump(instanceId, opts)
+
+Start Enhanced Network Monitor on an instance.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+let opts = {
+  'netdumpFilter': new CorelliumClient.NetdumpFilter() // NetdumpFilter | 
+};
+apiInstance.v1StartNetdump(instanceId, opts).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **String**| Instance ID - uuid | 
+ **netdumpFilter** | [**NetdumpFilter**](NetdumpFilter.md)|  | [optional] 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## v1StartNetworkMonitor
 
 > v1StartNetworkMonitor(instanceId)
@@ -5344,6 +5440,52 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## v1StopNetdump
+
+> v1StopNetdump(instanceId)
+
+Stop Enhanced Network Monitor on an instance.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+apiInstance.v1StopNetdump(instanceId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **String**| Instance ID - uuid | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
@@ -6057,53 +6199,11 @@ No authorization required
 - **Accept**: application/json
 
 
-## v1WebPlayerAllowedDomains
+## v2GetInstanceQuickConnectCommand
 
-> WebPlayerSession v1WebPlayerAllowedDomains()
+> String v2GetInstanceQuickConnectCommand(instanceId)
 
-Retrieve the list of allowed domains for all Webplayer sessions
-
-### Example
-
-```javascript
-import CorelliumClient from '@corellium/client-api';
-let defaultClient = CorelliumClient.ApiClient.instance;
-// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new CorelliumClient.CorelliumApi();
-apiInstance.v1WebPlayerAllowedDomains().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**WebPlayerSession**](WebPlayerSession.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## v1WebPlayerCreateSession
-
-> WebPlayerSession v1WebPlayerCreateSession(webPlayerCreateSessionRequest)
-
-Create a new Webplayer Session
+Recommended SSH Command for Quick Connect
 
 ### Example
 
@@ -6115,16 +6215,8 @@ let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
-let webPlayerCreateSessionRequest = {
-  "projectId": "0fc719fc-335d-458c-a424-51a550a73d12",
-  "instanceId": "fbd94550-3f74-4d46-a6ed-c26cbfb23340",
-  "expiresIn": 18000,
-  "features": {
-    "apps": true,
-    "files": true
-  },
-}; // WebPlayerCreateSessionRequest | Request Data
-apiInstance.v1WebPlayerCreateSession(webPlayerCreateSessionRequest).then((data) => {
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+apiInstance.v2GetInstanceQuickConnectCommand(instanceId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6137,57 +6229,11 @@ apiInstance.v1WebPlayerCreateSession(webPlayerCreateSessionRequest).then((data) 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webPlayerCreateSessionRequest** | [**WebPlayerCreateSessionRequest**](WebPlayerCreateSessionRequest.md)| Request Data | 
+ **instanceId** | **String**| Instance ID - uuid | 
 
 ### Return type
 
-[**WebPlayerSession**](WebPlayerSession.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## v1WebPlayerDestroySession
-
-> v1WebPlayerDestroySession(sessionId)
-
-Tear down a Webplayer Session
-
-### Example
-
-```javascript
-import CorelliumClient from '@corellium/client-api';
-let defaultClient = CorelliumClient.ApiClient.instance;
-// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new CorelliumClient.CorelliumApi();
-let sessionId = "sessionId_example"; // String | Webplayer Session identifier
-apiInstance.v1WebPlayerDestroySession(sessionId).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **sessionId** | **String**| Webplayer Session identifier | 
-
-### Return type
-
-null (empty response body)
+**String**
 
 ### Authorization
 
@@ -6199,53 +6245,11 @@ null (empty response body)
 - **Accept**: application/json
 
 
-## v1WebPlayerListSessions
+## v2GetInstanceState
 
-> [WebPlayerSession] v1WebPlayerListSessions()
+> InstanceState v2GetInstanceState(instanceId, opts)
 
-List all Webplayer sessions
-
-### Example
-
-```javascript
-import CorelliumClient from '@corellium/client-api';
-let defaultClient = CorelliumClient.ApiClient.instance;
-// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new CorelliumClient.CorelliumApi();
-apiInstance.v1WebPlayerListSessions().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-[**[WebPlayerSession]**](WebPlayerSession.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## v1WebPlayerSessionInfo
-
-> WebPlayerSession v1WebPlayerSessionInfo(sessionId)
-
-Retrieve Webplayer Session Information
+Get state of Instance
 
 ### Example
 
@@ -6257,8 +6261,11 @@ let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
-let sessionId = "sessionId_example"; // String | Webplayer Session identifier
-apiInstance.v1WebPlayerSessionInfo(sessionId).then((data) => {
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+let opts = {
+  'returnAttr': ["null"] // [String] | The attributes to return.
+};
+apiInstance.v2GetInstanceState(instanceId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -6271,11 +6278,12 @@ apiInstance.v1WebPlayerSessionInfo(sessionId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sessionId** | **String**| Webplayer Session identifier | 
+ **instanceId** | **String**| Instance ID - uuid | 
+ **returnAttr** | [**[String]**](String.md)| The attributes to return. | [optional] 
 
 ### Return type
 
-[**WebPlayerSession**](WebPlayerSession.md)
+[**InstanceState**](InstanceState.md)
 
 ### Authorization
 

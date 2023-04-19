@@ -46,6 +46,8 @@ Name | Type | Description | Notes
 
 * `partition` (value: `"partition"`)
 
+* `backup` (value: `"backup"`)
+
 
 
 
