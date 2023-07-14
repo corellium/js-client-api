@@ -1944,7 +1944,6 @@ let apiInstance = new CorelliumClient.CorelliumApi();
 let project = {
   "name": "New Project",
   "settings": {
-    "version": 1,
     "internet-access": true
   },
   "quotas": {
@@ -4615,7 +4614,7 @@ No authorization required
 
 ## v1RestoreBackup
 
-> v1RestoreBackup(instanceId)
+> v1RestoreBackup(instanceId, opts)
 
 Restore backup
 
@@ -4630,7 +4629,10 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
 let instanceId = "instanceId_example"; // String | Instance ID - uuid
-apiInstance.v1RestoreBackup(instanceId).then(() => {
+let opts = {
+  'body': {key: null} // Object | Restore backup data
+};
+apiInstance.v1RestoreBackup(instanceId, opts).then(() => {
   console.log('API called successfully.');
 }, (error) => {
   console.error(error);
@@ -4644,6 +4646,7 @@ apiInstance.v1RestoreBackup(instanceId).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instanceId** | **String**| Instance ID - uuid | 
+ **body** | **Object**| Restore backup data | [optional] 
 
 ### Return type
 
@@ -4655,7 +4658,7 @@ null (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -5223,7 +5226,7 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new CorelliumClient.CorelliumApi();
 let instanceId = "instanceId_example"; // String | Instance ID - uuid
 let opts = {
-  'netdumpFilter': new CorelliumClient.NetdumpFilter() // NetdumpFilter | 
+  'netdumpFilter': { } // NetdumpFilter | 
 };
 apiInstance.v1StartNetdump(instanceId, opts).then(() => {
   console.log('API called successfully.');
