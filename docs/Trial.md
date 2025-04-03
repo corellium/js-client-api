@@ -4,6 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**duration** | **Number** | Duration in days | 
+**defaultDuration** | **Number** | Maintenance message | [optional] 
+**defaultHours** | **Number** | Maintenance header | [optional] 
+**defaultDevices** | **Number** | Maintenance header | [optional] 
+**defaultCores** | **Number** | Maintenance header | [optional] 
 
 

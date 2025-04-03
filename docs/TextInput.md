@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**text** | **String** | text to type | [optional] 
+**required** | **String** | text to type | 
+**keyDuration** | **Number** | How long to take to type each key.  150ms if not defined. | [optional] 
 
 

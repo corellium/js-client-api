@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**internetAccess** | **Boolean** |  | [optional] 
-**dhcp** | **Boolean** |  | [optional] 
+**internetAccess** | **Boolean** |  | 
+**connection** | **String** | UUIDv4 network connection identifier or null for no vpn connection | [optional] 
+**dhcp** | **Boolean** |  | 
 
 
