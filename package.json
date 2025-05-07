@@ -1,6 +1,6 @@
 {
   "name": "@corellium/client-api",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Corellium Client API",
   "license": "Apache-2.0",
   "main": "dist/index.js",
