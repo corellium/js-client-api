@@ -2647,7 +2647,7 @@ Name | Type | Description  | Notes
 
 ## v1CreateNetworkConnection
 
-> v1CreateNetworkConnection(createNetworkConnectionOptions)
+> NetworkConnection v1CreateNetworkConnection(createNetworkConnectionOptions)
 
 Create a new Network Connection
 
@@ -2681,8 +2681,8 @@ let createNetworkConnectionOptions = {
       "verb 3\n"
   }
 }; // CreateNetworkConnectionOptions | Network Connection Options
-apiInstance.v1CreateNetworkConnection(createNetworkConnectionOptions).then(() => {
-  console.log('API called successfully.');
+apiInstance.v1CreateNetworkConnection(createNetworkConnectionOptions).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -2698,7 +2698,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**NetworkConnection**](NetworkConnection.md)
 
 ### Authorization
 
@@ -2707,7 +2707,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## v1CreateProject
@@ -7462,7 +7462,7 @@ Name | Type | Description  | Notes
 
 ## v1UpdateNetworkConnection
 
-> v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts)
+> NetworkConnection v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts)
 
 Update Network Connection
 
@@ -7500,8 +7500,8 @@ let updateNetworkConnectionOptions = {
 let opts = {
   'force': true // Boolean | Force deletion (true only or not present)
 };
-apiInstance.v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -7519,7 +7519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**NetworkConnection**](NetworkConnection.md)
 
 ### Authorization
 
@@ -7528,7 +7528,7 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## v1UpdateProject

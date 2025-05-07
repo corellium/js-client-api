@@ -178,13 +178,13 @@ ActivityRequest.prototype['actor'] = undefined;
 ActivityRequest.prototype['search'] = undefined;
 
 /**
- * Date to filter to, keyed off of createdAt, defaults to now
+ * Date to filter to, keyed off of createdAt
  * @member {String} to
  */
 ActivityRequest.prototype['to'] = undefined;
 
 /**
- * Date to filter from, keyed off of createdAt, defaults to 1 week ago
+ * Date to filter from, keyed off of createdAt
  * @member {String} from
  */
 ActivityRequest.prototype['from'] = undefined;

@@ -49,7 +49,7 @@ class ApiClient {
             'BearerAuth': {type: 'bearer'} // ApiToken or JWT
         }
 
-        /**
+	/**
          * The default HTTP headers to be included for all API calls.
          * @type {Array.<String>}
          * @default {}
@@ -73,7 +73,7 @@ class ApiClient {
          */
         this.cache = true;
 
-        /**
+	/**
          * If set to true, the client will save the cookies from each server
          * response, and return them in the next request.
          * @default false
@@ -155,7 +155,7 @@ class ApiClient {
             url = apiBasePath + path;
         }
 
-        url = url.replace(/\{([\w-\.]+)\}/g, (fullMatch, key) => {
+        url = url.replace(/\{([\w-\.#]+)\}/g, (fullMatch, key) => {
             var value;
             if (pathParams.hasOwnProperty(key)) {
                 value = this.paramToString(pathParams[key]);
@@ -431,7 +431,8 @@ class ApiClient {
         }
 
         if (contentType === 'application/x-www-form-urlencoded') {
-            request.send(querystring.stringify(this.normalizeParams(formParams)));
+            let queryString = querystring.stringify(this.normalizeParams(formParams));
+            request.send(queryString);
         } else if (contentType == 'multipart/form-data') {
             var _formParams = this.normalizeParams(formParams);
             for (var key in _formParams) {
