@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RotateBody model module.
  * @module model/RotateBody
- * @version 0.4.0
+ * @version 0.4.1
  */
 class RotateBody {
     /**

@@ -18,7 +18,7 @@ import SnapshotStatus from './SnapshotStatus';
 /**
  * The Snapshot model module.
  * @module model/Snapshot
- * @version 0.4.0
+ * @version 0.4.1
  */
 class Snapshot {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Logging model module.
  * @module model/Logging
- * @version 0.4.0
+ * @version 0.4.1
  */
 class Logging {
     /**

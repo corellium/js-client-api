@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AgentApp model module.
  * @module model/AgentApp
- * @version 0.4.0
+ * @version 0.4.1
  */
 class AgentApp {
     /**

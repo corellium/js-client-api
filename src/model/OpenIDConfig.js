@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OpenIDConfig model module.
  * @module model/OpenIDConfig
- * @version 0.4.0
+ * @version 0.4.1
  */
 class OpenIDConfig {
     /**

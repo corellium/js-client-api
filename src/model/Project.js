@@ -19,7 +19,7 @@ import ProjectUsage from './ProjectUsage';
 /**
  * The Project model module.
  * @module model/Project
- * @version 0.4.0
+ * @version 0.4.1
  */
 class Project {
     /**

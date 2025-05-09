@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Features model module.
  * @module model/Features
- * @version 0.4.0
+ * @version 0.4.1
  */
 class Features {
     /**

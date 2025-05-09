@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AgentIcons model module.
  * @module model/AgentIcons
- * @version 0.4.0
+ * @version 0.4.1
  */
 class AgentIcons {
     /**

@@ -18,7 +18,7 @@ import SnapshotOwner from './SnapshotOwner';
 /**
  * The SnapshotSharing model module.
  * @module model/SnapshotSharing
- * @version 0.4.0
+ * @version 0.4.1
  */
 class SnapshotSharing {
     /**

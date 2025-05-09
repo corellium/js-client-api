@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceStartOptions model module.
  * @module model/InstanceStartOptions
- * @version 0.4.0
+ * @version 0.4.1
  */
 class InstanceStartOptions {
     /**

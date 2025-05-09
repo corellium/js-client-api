@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Maintenance model module.
  * @module model/Maintenance
- * @version 0.4.0
+ * @version 0.4.1
  */
 class Maintenance {
     /**

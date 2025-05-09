@@ -18,7 +18,7 @@ import CreateAssessmentDto from './CreateAssessmentDto';
 /**
  * The Assessment model module.
  * @module model/Assessment
- * @version 0.4.0
+ * @version 0.4.1
  */
 class Assessment {
     /**

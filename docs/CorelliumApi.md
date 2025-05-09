@@ -2647,7 +2647,7 @@ Name | Type | Description  | Notes
 
 ## v1CreateNetworkConnection
 
-> NetworkConnection v1CreateNetworkConnection(createNetworkConnectionOptions)
+> v1CreateNetworkConnection(createNetworkConnectionOptions)
 
 Create a new Network Connection
 
@@ -2681,8 +2681,8 @@ let createNetworkConnectionOptions = {
       "verb 3\n"
   }
 }; // CreateNetworkConnectionOptions | Network Connection Options
-apiInstance.v1CreateNetworkConnection(createNetworkConnectionOptions).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.v1CreateNetworkConnection(createNetworkConnectionOptions).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -2698,7 +2698,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkConnection**](NetworkConnection.md)
+null (empty response body)
 
 ### Authorization
 
@@ -2707,7 +2707,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 
 ## v1CreateProject
@@ -7462,7 +7462,7 @@ Name | Type | Description  | Notes
 
 ## v1UpdateNetworkConnection
 
-> NetworkConnection v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts)
+> v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts)
 
 Update Network Connection
 
@@ -7500,8 +7500,8 @@ let updateNetworkConnectionOptions = {
 let opts = {
   'force': true // Boolean | Force deletion (true only or not present)
 };
-apiInstance.v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -7519,7 +7519,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NetworkConnection**](NetworkConnection.md)
+null (empty response body)
 
 ### Authorization
 
@@ -7528,7 +7528,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 
 ## v1UpdateProject

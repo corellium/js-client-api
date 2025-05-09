@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InviteRevokeParamsIds model module.
  * @module model/InviteRevokeParamsIds
- * @version 0.4.0
+ * @version 0.4.1
  */
 class InviteRevokeParamsIds {
     /**

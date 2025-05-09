@@ -17,7 +17,7 @@ import AgentApp from './AgentApp';
 /**
  * The AgentAppsList model module.
  * @module model/AgentAppsList
- * @version 0.4.0
+ * @version 0.4.1
  */
 class AgentAppsList {
     /**

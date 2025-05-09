@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TrialExtension model module.
  * @module model/TrialExtension
- * @version 0.4.0
+ * @version 0.4.1
  */
 class TrialExtension {
     /**

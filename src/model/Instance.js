@@ -23,7 +23,7 @@ import InstanceState from './InstanceState';
 /**
  * The Instance model module.
  * @module model/Instance
- * @version 0.4.0
+ * @version 0.4.1
  */
 class Instance {
     /**

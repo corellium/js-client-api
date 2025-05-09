@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProjectNetworkState model module.
  * @module model/ProjectNetworkState
- * @version 0.4.0
+ * @version 0.4.1
  */
 class ProjectNetworkState {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SnapshotPermissionsRequestPayload model module.
  * @module model/SnapshotPermissionsRequestPayload
- * @version 0.4.0
+ * @version 0.4.1
  */
 class SnapshotPermissionsRequestPayload {
     /**

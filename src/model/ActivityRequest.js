@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActivityRequest model module.
  * @module model/ActivityRequest
- * @version 0.4.0
+ * @version 0.4.1
  */
 class ActivityRequest {
     /**
@@ -178,13 +178,13 @@ ActivityRequest.prototype['actor'] = undefined;
 ActivityRequest.prototype['search'] = undefined;
 
 /**
- * Date to filter to, keyed off of createdAt
+ * Date to filter to, keyed off of createdAt, defaults to now
  * @member {String} to
  */
 ActivityRequest.prototype['to'] = undefined;
 
 /**
- * Date to filter from, keyed off of createdAt
+ * Date to filter from, keyed off of createdAt, defaults to 1 week ago
  * @member {String} from
  */
 ActivityRequest.prototype['from'] = undefined;

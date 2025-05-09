@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateNetworkConnectionOptions model module.
  * @module model/CreateNetworkConnectionOptions
- * @version 0.4.0
+ * @version 0.4.1
  */
 class CreateNetworkConnectionOptions {
     /**

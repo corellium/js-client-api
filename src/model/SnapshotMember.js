@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SnapshotMember model module.
  * @module model/SnapshotMember
- * @version 0.4.0
+ * @version 0.4.1
  */
 class SnapshotMember {
     /**

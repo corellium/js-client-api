@@ -18,7 +18,7 @@ import Pagination from './Pagination';
 /**
  * The ActivityList model module.
  * @module model/ActivityList
- * @version 0.4.0
+ * @version 0.4.1
  */
 class ActivityList {
     /**

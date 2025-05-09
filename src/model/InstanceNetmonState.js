@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceNetmonState model module.
  * @module model/InstanceNetmonState
- * @version 0.4.0
+ * @version 0.4.1
  */
 class InstanceNetmonState {
     /**

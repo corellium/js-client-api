@@ -100,7 +100,7 @@ import WebPlayerSession from '../model/WebPlayerSession';
 /**
 * Corellium service.
 * @module api/CorelliumApi
-* @version 0.4.0
+* @version 0.4.1
 */
 export default class CorelliumApi {
 
@@ -2722,7 +2722,7 @@ export default class CorelliumApi {
      * Create a new Network Connection
      * You must have the domain administrator role to create a network connection. VLAN networks are only supported in bridged networking mode.
      * @param {module:model/CreateNetworkConnectionOptions} createNetworkConnectionOptions Network Connection Options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetworkConnection} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     v1CreateNetworkConnectionWithHttpInfo(createNetworkConnectionOptions) {
       let postBody = createNetworkConnectionOptions;
@@ -2742,8 +2742,8 @@ export default class CorelliumApi {
 
       let authNames = ['BearerAuth'];
       let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = NetworkConnection;
+      let accepts = [];
+      let returnType = null;
       return this.apiClient.callApi(
         '/v1/network/connections', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -2755,7 +2755,7 @@ export default class CorelliumApi {
      * Create a new Network Connection
      * You must have the domain administrator role to create a network connection. VLAN networks are only supported in bridged networking mode.
      * @param {module:model/CreateNetworkConnectionOptions} createNetworkConnectionOptions Network Connection Options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetworkConnection}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     v1CreateNetworkConnection(createNetworkConnectionOptions) {
       return this.v1CreateNetworkConnectionWithHttpInfo(createNetworkConnectionOptions)
@@ -7591,7 +7591,7 @@ export default class CorelliumApi {
      * @param {module:model/UpdateNetworkConnectionOptions} updateNetworkConnectionOptions Network Connection Options
      * @param {Object} opts Optional parameters
      * @param {Boolean} [force] Force deletion (true only or not present)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/NetworkConnection} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     v1UpdateNetworkConnectionWithHttpInfo(id, updateNetworkConnectionOptions, opts) {
       opts = opts || {};
@@ -7618,8 +7618,8 @@ export default class CorelliumApi {
 
       let authNames = ['BearerAuth'];
       let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = NetworkConnection;
+      let accepts = [];
+      let returnType = null;
       return this.apiClient.callApi(
         '/v1/network/connections/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -7634,7 +7634,7 @@ export default class CorelliumApi {
      * @param {module:model/UpdateNetworkConnectionOptions} updateNetworkConnectionOptions Network Connection Options
      * @param {Object} opts Optional parameters
      * @param {Boolean} opts.force Force deletion (true only or not present)
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/NetworkConnection}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts) {
       return this.v1UpdateNetworkConnectionWithHttpInfo(id, updateNetworkConnectionOptions, opts)

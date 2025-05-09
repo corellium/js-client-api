@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InstanceNetdumpState model module.
  * @module model/InstanceNetdumpState
- * @version 0.4.0
+ * @version 0.4.1
  */
 class InstanceNetdumpState {
     /**

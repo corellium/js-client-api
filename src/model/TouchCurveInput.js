@@ -17,7 +17,7 @@ import TouchInputButtonsInner from './TouchInputButtonsInner';
 /**
  * The TouchCurveInput model module.
  * @module model/TouchCurveInput
- * @version 0.4.0
+ * @version 0.4.1
  */
 class TouchCurveInput {
     /**

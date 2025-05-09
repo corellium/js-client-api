@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ProjectKey model module.
  * @module model/ProjectKey
- * @version 0.4.0
+ * @version 0.4.1
  */
 class ProjectKey {
     /**

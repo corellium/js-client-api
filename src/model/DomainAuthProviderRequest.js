@@ -17,7 +17,7 @@ import OpenIDConfig from './OpenIDConfig';
 /**
  * The DomainAuthProviderRequest model module.
  * @module model/DomainAuthProviderRequest
- * @version 0.4.0
+ * @version 0.4.1
  */
 class DomainAuthProviderRequest {
     /**

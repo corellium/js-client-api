@@ -17,7 +17,7 @@ import Bit from './Bit';
 /**
  * The GpioStateDefinition model module.
  * @module model/GpioStateDefinition
- * @version 0.4.0
+ * @version 0.4.1
  */
 class GpioStateDefinition {
     /**

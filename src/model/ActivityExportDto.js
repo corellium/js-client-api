@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ActivityExportDto model module.
  * @module model/ActivityExportDto
- * @version 0.4.0
+ * @version 0.4.1
  */
 class ActivityExportDto {
     /**

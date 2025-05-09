@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserError model module.
  * @module model/UserError
- * @version 0.4.0
+ * @version 0.4.1
  */
 class UserError {
     /**

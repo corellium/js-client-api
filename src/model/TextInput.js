@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TextInput model module.
  * @module model/TextInput
- * @version 0.4.0
+ * @version 0.4.1
  */
 class TextInput {
     /**

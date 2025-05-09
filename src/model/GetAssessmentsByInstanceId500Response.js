@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetAssessmentsByInstanceId500Response model module.
  * @module model/GetAssessmentsByInstanceId500Response
- * @version 0.4.0
+ * @version 0.4.1
  */
 class GetAssessmentsByInstanceId500Response {
     /**

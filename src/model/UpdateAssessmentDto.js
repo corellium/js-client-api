@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateAssessmentDto model module.
  * @module model/UpdateAssessmentDto
- * @version 0.4.0
+ * @version 0.4.1
  */
 class UpdateAssessmentDto {
     /**

@@ -17,7 +17,7 @@ import Maintenance from './Maintenance';
 /**
  * The ConfigResponseMaintenance model module.
  * @module model/ConfigResponseMaintenance
- * @version 0.4.0
+ * @version 0.4.1
  */
 class ConfigResponseMaintenance {
     /**

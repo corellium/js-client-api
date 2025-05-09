@@ -19,7 +19,7 @@ import Trial from './Trial';
 /**
  * The SubscriberInvite model module.
  * @module model/SubscriberInvite
- * @version 0.4.0
+ * @version 0.4.1
  */
 class SubscriberInvite {
     /**

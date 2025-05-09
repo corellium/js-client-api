@@ -20,7 +20,7 @@ import Trial from './Trial';
 /**
  * The ConfigResponse model module.
  * @module model/ConfigResponse
- * @version 0.4.0
+ * @version 0.4.1
  */
 class ConfigResponse {
     /**

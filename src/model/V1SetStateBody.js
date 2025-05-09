@@ -17,7 +17,7 @@ import InstanceState from './InstanceState';
 /**
  * The V1SetStateBody model module.
  * @module model/V1SetStateBody
- * @version 0.4.0
+ * @version 0.4.1
  */
 class V1SetStateBody {
     /**

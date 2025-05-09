@@ -17,7 +17,7 @@ import SnapshotOwner from './SnapshotOwner';
 /**
  * The SharedSnapshotsInfo model module.
  * @module model/SharedSnapshotsInfo
- * @version 0.4.0
+ * @version 0.4.1
  */
 class SharedSnapshotsInfo {
     /**

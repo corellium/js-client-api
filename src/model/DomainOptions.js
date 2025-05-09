@@ -18,7 +18,7 @@ import TrialExtension from './TrialExtension';
 /**
  * The DomainOptions model module.
  * @module model/DomainOptions
- * @version 0.4.0
+ * @version 0.4.1
  */
 class DomainOptions {
     /**

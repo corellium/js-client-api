@@ -17,7 +17,7 @@ import NetworkConnectionProvider from './NetworkConnectionProvider';
 /**
  * The NetworkConnectionProviderOffsetPaginationResult model module.
  * @module model/NetworkConnectionProviderOffsetPaginationResult
- * @version 0.4.0
+ * @version 0.4.1
  */
 class NetworkConnectionProviderOffsetPaginationResult {
     /**

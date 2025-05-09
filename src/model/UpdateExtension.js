@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdateExtension model module.
  * @module model/UpdateExtension
- * @version 0.4.0
+ * @version 0.4.1
  */
 class UpdateExtension {
     /**

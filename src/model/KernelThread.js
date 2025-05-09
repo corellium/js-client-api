@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The KernelThread model module.
  * @module model/KernelThread
- * @version 0.4.0
+ * @version 0.4.1
  */
 class KernelThread {
     /**

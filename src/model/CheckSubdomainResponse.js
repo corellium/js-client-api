@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CheckSubdomainResponse model module.
  * @module model/CheckSubdomainResponse
- * @version 0.4.0
+ * @version 0.4.1
  */
 class CheckSubdomainResponse {
     /**

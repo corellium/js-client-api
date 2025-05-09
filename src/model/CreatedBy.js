@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatedBy model module.
  * @module model/CreatedBy
- * @version 0.4.0
+ * @version 0.4.1
  */
 class CreatedBy {
     /**

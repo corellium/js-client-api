@@ -18,7 +18,7 @@ import ProxyConfig from './ProxyConfig';
 /**
  * The PatchInstanceOptions model module.
  * @module model/PatchInstanceOptions
- * @version 0.4.0
+ * @version 0.4.1
  */
 class PatchInstanceOptions {
     /**

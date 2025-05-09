@@ -17,7 +17,7 @@ import OpenIDConfig from './OpenIDConfig';
 /**
  * The DomainAuthProviderResponse model module.
  * @module model/DomainAuthProviderResponse
- * @version 0.4.0
+ * @version 0.4.1
  */
 class DomainAuthProviderResponse {
     /**

@@ -20,7 +20,7 @@ import TouchInputButtonsInner from './TouchInputButtonsInner';
 /**
  * The InstanceInput model module.
  * @module model/InstanceInput
- * @version 0.4.0
+ * @version 0.4.1
  */
 class InstanceInput {
     /**

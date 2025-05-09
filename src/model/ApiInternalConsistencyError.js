@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ApiInternalConsistencyError model module.
  * @module model/ApiInternalConsistencyError
- * @version 0.4.0
+ * @version 0.4.1
  */
 class ApiInternalConsistencyError {
     /**

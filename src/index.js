@@ -188,7 +188,7 @@ import CorelliumApi from './api/CorelliumApi';
 * </pre>
 * </p>
 * @module index
-* @version 0.4.0
+* @version 0.4.1
 */
 export {
     /**

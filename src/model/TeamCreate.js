@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TeamCreate model module.
  * @module model/TeamCreate
- * @version 0.4.0
+ * @version 0.4.1
  */
 class TeamCreate {
     /**
