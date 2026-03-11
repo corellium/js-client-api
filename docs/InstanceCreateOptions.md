@@ -17,9 +17,6 @@ Name | Type | Description | Notes
 **origFwPackageUrl** | **String** | URL that firmware package used to create this instance is available at | [optional] 
 **encrypt** | **Boolean** |  | [optional] 
 **wifiMac** | **String** |  | [optional] 
-**volume** | [**VolumeOptions**](VolumeOptions.md) |  | [optional] 
-**snapshot** | **String** | Snapshot ID for this instance to be cloned from if defined | [optional] 
-**bootOptions** | [**InstanceBootOptions**](InstanceBootOptions.md) |  | [optional] 
-**device** | [**Model**](Model.md) |  | [optional] 
+**wanAccess** | **Boolean** | manages internet access | [optional] 
 
 

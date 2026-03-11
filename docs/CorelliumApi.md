@@ -4,6 +4,12 @@ All URIs are relative to *https://app.corellium.com/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiV1InterconnectsGet**](CorelliumApi.md#apiV1InterconnectsGet) | **GET** /api/v1/interconnects | Get all I/O Interconnects
+[**apiV1InterconnectsInterconnectIdDelete**](CorelliumApi.md#apiV1InterconnectsInterconnectIdDelete) | **DELETE** /api/v1/interconnects/:interconnectId | Delete I/O Interconnect
+[**apiV1InterconnectsInterconnectIdGet**](CorelliumApi.md#apiV1InterconnectsInterconnectIdGet) | **GET** /api/v1/interconnects/:interconnectId | Get Interconnect
+[**apiV1InterconnectsInterconnectIdPatch**](CorelliumApi.md#apiV1InterconnectsInterconnectIdPatch) | **PATCH** /api/v1/interconnects/:interconnectId | Partial Update Interconnect
+[**apiV1InterconnectsInterconnectIdPut**](CorelliumApi.md#apiV1InterconnectsInterconnectIdPut) | **PUT** /api/v1/interconnects/:interconnectId | Update Interconnect
+[**apiV1InterconnectsPost**](CorelliumApi.md#apiV1InterconnectsPost) | **POST** /api/v1/interconnects | Create I/O Interconnect
 [**createAssessment**](CorelliumApi.md#createAssessment) | **POST** /v1/services/matrix/{instanceId}/assessments | Create assessment
 [**deleteAssessment**](CorelliumApi.md#deleteAssessment) | **DELETE** /v1/services/matrix/{instanceId}/assessments/{assessmentId} | Delete assessment
 [**downloadReport**](CorelliumApi.md#downloadReport) | **GET** /v1/services/matrix/{instanceId}/assessments/{assessmentId}/download | Download report
@@ -44,13 +50,31 @@ Method | HTTP request | Description
 [**v1AgentUninstallApp**](CorelliumApi.md#v1AgentUninstallApp) | **POST** /v1/instances/{instanceId}/agent/v1/app/apps/{bundleId}/uninstall | Uninstall an App
 [**v1AgentUninstallProfile**](CorelliumApi.md#v1AgentUninstallProfile) | **DELETE** /v1/instances/{instanceId}/agent/v1/profile/profiles/{profileId} | Uninstall a Profile from VM
 [**v1AgentUploadFile**](CorelliumApi.md#v1AgentUploadFile) | **PUT** /v1/instances/{instanceId}/agent/v1/file/device/{filePath} | Upload a file to VM
+[**v1AttachInstanceInterface**](CorelliumApi.md#v1AttachInstanceInterface) | **POST** /v1/instances/{instanceId}/interfaces | Attach I/O Interface
 [**v1AuthLogin**](CorelliumApi.md#v1AuthLogin) | **POST** /v1/auth/login | Log In
 [**v1BtracePreauthorize**](CorelliumApi.md#v1BtracePreauthorize) | **GET** /v1/instances/{instanceId}/btrace-authorize | Pre-authorize an btrace download
-[**v1CheckSubdomainExistence**](CorelliumApi.md#v1CheckSubdomainExistence) | **POST** /v1/domain/check | Check the existence of a subdomain
 [**v1ClearCoreTrace**](CorelliumApi.md#v1ClearCoreTrace) | **DELETE** /v1/instances/{instanceId}/strace | Clear CoreTrace logs
 [**v1ClearHyperTrace**](CorelliumApi.md#v1ClearHyperTrace) | **DELETE** /v1/instances/{instanceId}/btrace | Clear HyperTrace logs
 [**v1ClearHyperTraceHooks**](CorelliumApi.md#v1ClearHyperTraceHooks) | **POST** /v1/instances/{instanceId}/hooks/clear | Clear Hooks on an instance
 [**v1ClearInstancePanics**](CorelliumApi.md#v1ClearInstancePanics) | **DELETE** /v1/instances/{instanceId}/panics | Clear Panics
+[**v1ClusterConfigGet**](CorelliumApi.md#v1ClusterConfigGet) | **GET** /v1/cluster/config | Get cluster configuration
+[**v1ClusterConfigPatch**](CorelliumApi.md#v1ClusterConfigPatch) | **PATCH** /v1/cluster/config | Update cluster configuration
+[**v1ClusterFirmwareServiceConfigGet**](CorelliumApi.md#v1ClusterFirmwareServiceConfigGet) | **GET** /v1/cluster/firmware-service/config | Fetch firmware service configuration
+[**v1ClusterFirmwareServiceConfigPatch**](CorelliumApi.md#v1ClusterFirmwareServiceConfigPatch) | **PATCH** /v1/cluster/firmware-service/config | Update firmware service configuration
+[**v1ClusterFirmwareServiceConfigPut**](CorelliumApi.md#v1ClusterFirmwareServiceConfigPut) | **PUT** /v1/cluster/firmware-service/config | Set firmware service configuration
+[**v1ClusterFirmwareServiceDevicesGet**](CorelliumApi.md#v1ClusterFirmwareServiceDevicesGet) | **GET** /v1/cluster/firmware-service/devices | Fetch devices from the firmware service
+[**v1ClusterFirmwareServiceFirmwareAssetsAssetURLDelete**](CorelliumApi.md#v1ClusterFirmwareServiceFirmwareAssetsAssetURLDelete) | **DELETE** /v1/cluster/firmware-service/firmware-assets/{assetURL} | Delete a firmware asset by its URL
+[**v1ClusterFirmwareServiceFirmwareAssetsAssetURLExtendedGet**](CorelliumApi.md#v1ClusterFirmwareServiceFirmwareAssetsAssetURLExtendedGet) | **GET** /v1/cluster/firmware-service/firmware-assets/{assetURL}/extended | Fetch extended firmware-asset details including instances and associated IPSWs
+[**v1ClusterFirmwareServiceFirmwareAssetsGet**](CorelliumApi.md#v1ClusterFirmwareServiceFirmwareAssetsGet) | **GET** /v1/cluster/firmware-service/firmware-assets | Fetch firmware assets from the firmware service
+[**v1ClusterFirmwareServiceFirmwareAssetsPost**](CorelliumApi.md#v1ClusterFirmwareServiceFirmwareAssetsPost) | **POST** /v1/cluster/firmware-service/firmware-assets | Add firmware assets via the firmware service
+[**v1ClusterFirmwareServiceFirmwaresFilenameDelete**](CorelliumApi.md#v1ClusterFirmwareServiceFirmwaresFilenameDelete) | **DELETE** /v1/cluster/firmware-service/firmwares/{filename} | Delete a firmware by filename from the firmware service
+[**v1ClusterFirmwareServiceFirmwaresGet**](CorelliumApi.md#v1ClusterFirmwareServiceFirmwaresGet) | **GET** /v1/cluster/firmware-service/firmwares | Fetch firmwares from the firmware service
+[**v1ClusterNodesGet**](CorelliumApi.md#v1ClusterNodesGet) | **GET** /v1/cluster/nodes | List servers in the cluster
+[**v1ClusterNodesNodeIdConsoleGet**](CorelliumApi.md#v1ClusterNodesNodeIdConsoleGet) | **GET** /v1/cluster/nodes/:nodeId/console | Access node console via SSH
+[**v1ClusterNodesNodeIdGet**](CorelliumApi.md#v1ClusterNodesNodeIdGet) | **GET** /v1/cluster/nodes/:nodeId | Get node details by ID
+[**v1ClusterStorageGet**](CorelliumApi.md#v1ClusterStorageGet) | **GET** /v1/cluster/storage | Get storage devices
+[**v1ClusterStorageIdAttachPost**](CorelliumApi.md#v1ClusterStorageIdAttachPost) | **POST** /v1/cluster/storage/:id/attach | Mount and attach a storage device
+[**v1ClusterStorageIdEjectPost**](CorelliumApi.md#v1ClusterStorageIdEjectPost) | **POST** /v1/cluster/storage/:id/eject | Eject/Unmount removable media
 [**v1CreateDomainAuthProvider**](CorelliumApi.md#v1CreateDomainAuthProvider) | **POST** /v1/domain/{domainId}/auth | Create a new auth provider for a domain
 [**v1CreateHook**](CorelliumApi.md#v1CreateHook) | **POST** /v1/instances/{instanceId}/hooks | Create hypervisor hook for Instance
 [**v1CreateImage**](CorelliumApi.md#v1CreateImage) | **POST** /v1/images | Create a new Image
@@ -59,6 +83,7 @@ Method | HTTP request | Description
 [**v1CreateProject**](CorelliumApi.md#v1CreateProject) | **POST** /v1/projects | Create a Project
 [**v1CreateSnapshot**](CorelliumApi.md#v1CreateSnapshot) | **POST** /v1/instances/{instanceId}/snapshots | Create Instance Snapshot
 [**v1CreateUser**](CorelliumApi.md#v1CreateUser) | **POST** /v1/users | Create User
+[**v1DeleteClusterSnapshot**](CorelliumApi.md#v1DeleteClusterSnapshot) | **DELETE** /v1/cluster/snapshots/{snapshotId} | Delete a Cluster Snapshot
 [**v1DeleteDomainAuthProvider**](CorelliumApi.md#v1DeleteDomainAuthProvider) | **DELETE** /v1/domain/{domainId}/auth/{providerId} | Delete an auth provider from a domain
 [**v1DeleteHook**](CorelliumApi.md#v1DeleteHook) | **DELETE** /v1/hooks/{hookId} | Delete an existing hypervisor hook
 [**v1DeleteImage**](CorelliumApi.md#v1DeleteImage) | **DELETE** /v2/images/{imageId} | Delete Image
@@ -69,18 +94,22 @@ Method | HTTP request | Description
 [**v1DeleteSnapshot**](CorelliumApi.md#v1DeleteSnapshot) | **DELETE** /v1/snapshots/{snapshotId} | Delete a Snapshot
 [**v1DeleteSnapshotPermissions**](CorelliumApi.md#v1DeleteSnapshotPermissions) | **DELETE** /v1/snapshots/{snapshotId}/permissions | Delete member(s)
 [**v1DeleteUser**](CorelliumApi.md#v1DeleteUser) | **DELETE** /v1/users/{userId} | Delete User
+[**v1DetachInstanceInterface**](CorelliumApi.md#v1DetachInstanceInterface) | **DELETE** /v1/instances/{instanceId}/interfaces/{interfaceId} | Detach I/O Interface
 [**v1DisableExposePort**](CorelliumApi.md#v1DisableExposePort) | **POST** /v1/instances/{instanceId}/exposeport/disable | Disable an exposed port on an instance for device access.
 [**v1DownloadActivity**](CorelliumApi.md#v1DownloadActivity) | **GET** /v1/activity/export/{taskId}/download | Download activity
 [**v1EnableExposePort**](CorelliumApi.md#v1EnableExposePort) | **POST** /v1/instances/{instanceId}/exposeport/enable | Enable an exposed port on an instance for device access.
 [**v1ExecuteHyperTraceHooks**](CorelliumApi.md#v1ExecuteHyperTraceHooks) | **POST** /v1/instances/{instanceId}/hooks/execute | Execute Hooks on an instance
 [**v1GetActivityExportStatus**](CorelliumApi.md#v1GetActivityExportStatus) | **GET** /v1/activity/export/{taskId} | Get export task status
 [**v1GetActivityExportTasks**](CorelliumApi.md#v1GetActivityExportTasks) | **GET** /v1/activity/export | Get all export tasks for user
+[**v1GetClusterSnapshot**](CorelliumApi.md#v1GetClusterSnapshot) | **GET** /v1/cluster/snapshots/{snapshotId} | Get Cluster Snapshot
+[**v1GetClusterSnapshots**](CorelliumApi.md#v1GetClusterSnapshots) | **GET** /v1/cluster/snapshots | Get Cluster Snapshots
 [**v1GetConfig**](CorelliumApi.md#v1GetConfig) | **GET** /v1/config | Get all configs
 [**v1GetDomainAuthProviders**](CorelliumApi.md#v1GetDomainAuthProviders) | **GET** /v1/domain/{domainId}/auth | Return all configured auth providers for a domain (including globally configured providers)
 [**v1GetHookById**](CorelliumApi.md#v1GetHookById) | **GET** /v1/hooks/{hookId} | Get hypervisor hook by id
 [**v1GetHooks**](CorelliumApi.md#v1GetHooks) | **GET** /v1/instances/{instanceId}/hooks | Get all hypervisor hooks for Instance
 [**v1GetImage**](CorelliumApi.md#v1GetImage) | **GET** /v1/images/{imageId} | Get Image Metadata
 [**v1GetImages**](CorelliumApi.md#v1GetImages) | **GET** /v1/images | Get all Images Metadata
+[**v1GetInstallFirmwareStatus**](CorelliumApi.md#v1GetInstallFirmwareStatus) | **GET** /v1/images/install-firmware/{taskId} | Query install firmware request status.
 [**v1GetInstance**](CorelliumApi.md#v1GetInstance) | **GET** /v1/instances/{instanceId} | Get Instance
 [**v1GetInstanceConsole**](CorelliumApi.md#v1GetInstanceConsole) | **GET** /v1/instances/{instanceId}/console | Get console websocket URL
 [**v1GetInstanceConsoleLog**](CorelliumApi.md#v1GetInstanceConsoleLog) | **GET** /v1/instances/{instanceId}/consoleLog | Get Console Log
@@ -102,9 +131,10 @@ Method | HTTP request | Description
 [**v1GetProjectVpnConfig**](CorelliumApi.md#v1GetProjectVpnConfig) | **GET** /v1/projects/{projectId}/vpnconfig/{format} | Get Project VPN Configuration
 [**v1GetProjects**](CorelliumApi.md#v1GetProjects) | **GET** /v1/projects | Get Projects
 [**v1GetResetLinkInfo**](CorelliumApi.md#v1GetResetLinkInfo) | **GET** /v1/users/reset-link-info | Send Password Reset Link Info
-[**v1GetServiceProviderMetadata**](CorelliumApi.md#v1GetServiceProviderMetadata) | **GET** /v1/auth/providers/:providerId/spmetadata | Get service provider metadata xml from an auth provider
 [**v1GetSharedSnapshots**](CorelliumApi.md#v1GetSharedSnapshots) | **GET** /v1/snapshots/shared | Fetch shared snapshots
 [**v1GetSnapshot**](CorelliumApi.md#v1GetSnapshot) | **GET** /v1/snapshots/{snapshotId} | Get Snapshot
+[**v1InstallFirmware**](CorelliumApi.md#v1InstallFirmware) | **POST** /v1/images/install-firmware | Installs a firmware for cluster-wide use
+[**v1InstallFirmwareAssets**](CorelliumApi.md#v1InstallFirmwareAssets) | **POST** /v1/images/install-firmware-assets | Installs firmware assets for cluster-wide use
 [**v1InstancesInstanceIdMessagePost**](CorelliumApi.md#v1InstancesInstanceIdMessagePost) | **POST** /v1/instances/{instanceId}/message | Inject a message into an iOS VM
 [**v1InstancesInstanceIdNetdumpPcapGet**](CorelliumApi.md#v1InstancesInstanceIdNetdumpPcapGet) | **GET** /v1/instances/{instanceId}/netdump.pcap | Download a netdump pcap file
 [**v1InstancesInstanceIdNetworkMonitorPcapGet**](CorelliumApi.md#v1InstancesInstanceIdNetworkMonitorPcapGet) | **GET** /v1/instances/{instanceId}/networkMonitor.pcap | Download a Network Monitor pcap file
@@ -112,11 +142,13 @@ Method | HTTP request | Description
 [**v1ListNetworkConnections**](CorelliumApi.md#v1ListNetworkConnections) | **GET** /v1/network/connections | List available network connections
 [**v1ListNetworkInterfaces**](CorelliumApi.md#v1ListNetworkInterfaces) | **GET** /v1/network/interfaces | List available physical network interfaces
 [**v1ListNetworkProviders**](CorelliumApi.md#v1ListNetworkProviders) | **GET** /v1/network/providers | List available network providers
+[**v1ListStorageFiles**](CorelliumApi.md#v1ListStorageFiles) | **GET** /v1/storage/{id}/files/{path} | List Storage Files
 [**v1ListThreads**](CorelliumApi.md#v1ListThreads) | **GET** /v1/instances/{instanceId}/strace/thread-list | Get Running Threads (CoreTrace)
 [**v1MediaPlay**](CorelliumApi.md#v1MediaPlay) | **POST** /v1/instances/{instanceId}/media/play | Start playing media
 [**v1MediaStop**](CorelliumApi.md#v1MediaStop) | **POST** /v1/instances/{instanceId}/media/stop | Stop playing media
 [**v1PartialUpdateNetworkConnection**](CorelliumApi.md#v1PartialUpdateNetworkConnection) | **PATCH** /v1/network/connections/{id} | Update Network Connection (partial)
 [**v1PatchInstance**](CorelliumApi.md#v1PatchInstance) | **PATCH** /v1/instances/{instanceId} | Update Instance
+[**v1PatchInstanceReadOnly**](CorelliumApi.md#v1PatchInstanceReadOnly) | **PATCH** /v1/instances/{instanceId}/read-only | Update Instance Read Only
 [**v1PauseInstance**](CorelliumApi.md#v1PauseInstance) | **POST** /v1/instances/{instanceId}/pause | Pause an Instance
 [**v1PostInstanceInput**](CorelliumApi.md#v1PostInstanceInput) | **POST** /v1/instances/{instanceId}/input | Provide Instance Input
 [**v1Ready**](CorelliumApi.md#v1Ready) | **GET** /v1/ready | API Status
@@ -148,6 +180,7 @@ Method | HTTP request | Description
 [**v1StopInstance**](CorelliumApi.md#v1StopInstance) | **POST** /v1/instances/{instanceId}/stop | Stop an Instance
 [**v1StopNetdump**](CorelliumApi.md#v1StopNetdump) | **POST** /v1/instances/{instanceId}/netdump/disable | Stop Enhanced Network Monitor on an instance.
 [**v1StopNetworkMonitor**](CorelliumApi.md#v1StopNetworkMonitor) | **POST** /v1/instances/{instanceId}/sslsplit/disable | Stop Network Monitor on an instance.
+[**v1StorageGet**](CorelliumApi.md#v1StorageGet) | **GET** /v1/storage | Get storage devices
 [**v1TeamChange**](CorelliumApi.md#v1TeamChange) | **PATCH** /v1/teams/{teamId} | Update team
 [**v1TeamCreate**](CorelliumApi.md#v1TeamCreate) | **POST** /v1/teams | Create team
 [**v1TeamDelete**](CorelliumApi.md#v1TeamDelete) | **DELETE** /v1/teams/{teamId} | Delete team
@@ -174,9 +207,346 @@ Method | HTTP request | Description
 
 
 
+## apiV1InterconnectsGet
+
+> GetInterconnectsResponse apiV1InterconnectsGet(opts)
+
+Get all I/O Interconnects
+
+Get all I/O Interconnects
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let opts = {
+  'limit': 3.4, // Number | Maximum number of results to return (1-1000, default: 100)
+  'offset': 3.4, // Number | Number of results to skip (default: 0)
+  'name': "name_example", // String | Filter by interconnect name (case insensitive)
+  'protocol': "protocol_example", // String | Filter by protocol (comma separated)
+  'type': "type_example", // String | Filter by type (comma separated)
+  'status': "status_example", // String | Filter by status (comma separated)
+  'project': "project_example", // String | Filter by project ID (comma separated)
+  'sort': "sort_example" // String | Sort order (e.g. \"name\" for ascending, \"-name\" for descending, comma separated)
+};
+apiInstance.apiV1InterconnectsGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Number**| Maximum number of results to return (1-1000, default: 100) | [optional] 
+ **offset** | **Number**| Number of results to skip (default: 0) | [optional] 
+ **name** | **String**| Filter by interconnect name (case insensitive) | [optional] 
+ **protocol** | **String**| Filter by protocol (comma separated) | [optional] 
+ **type** | **String**| Filter by type (comma separated) | [optional] 
+ **status** | **String**| Filter by status (comma separated) | [optional] 
+ **project** | **String**| Filter by project ID (comma separated) | [optional] 
+ **sort** | **String**| Sort order (e.g. \&quot;name\&quot; for ascending, \&quot;-name\&quot; for descending, comma separated) | [optional] 
+
+### Return type
+
+[**GetInterconnectsResponse**](GetInterconnectsResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## apiV1InterconnectsInterconnectIdDelete
+
+> apiV1InterconnectsInterconnectIdDelete(interconnectId)
+
+Delete I/O Interconnect
+
+Delete I/O Interconnect
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let interconnectId = "interconnectId_example"; // String | The interconnect identifier
+apiInstance.apiV1InterconnectsInterconnectIdDelete(interconnectId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **interconnectId** | **String**| The interconnect identifier | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## apiV1InterconnectsInterconnectIdGet
+
+> InterconnectResponse apiV1InterconnectsInterconnectIdGet(interconnectId)
+
+Get Interconnect
+
+Get Interconnect
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let interconnectId = "interconnectId_example"; // String | The interconnect identifier
+apiInstance.apiV1InterconnectsInterconnectIdGet(interconnectId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **interconnectId** | **String**| The interconnect identifier | 
+
+### Return type
+
+[**InterconnectResponse**](InterconnectResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## apiV1InterconnectsInterconnectIdPatch
+
+> InterconnectResponse apiV1InterconnectsInterconnectIdPatch(interconnectId, partialUpdateInterconnectRequest)
+
+Partial Update Interconnect
+
+Update some interconnect details for the specified interconnect identifier.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let interconnectId = "interconnectId_example"; // String | The interconnect identifier
+let partialUpdateInterconnectRequest = {
+  "name": "My Can Bus 2 is new to you"
+}; // PartialUpdateInterconnectRequest | The interconnect details to update
+apiInstance.apiV1InterconnectsInterconnectIdPatch(interconnectId, partialUpdateInterconnectRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **interconnectId** | **String**| The interconnect identifier | 
+ **partialUpdateInterconnectRequest** | [**PartialUpdateInterconnectRequest**](PartialUpdateInterconnectRequest.md)| The interconnect details to update | 
+
+### Return type
+
+[**InterconnectResponse**](InterconnectResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## apiV1InterconnectsInterconnectIdPut
+
+> InterconnectResponse apiV1InterconnectsInterconnectIdPut(interconnectId, updateInterconnectRequest)
+
+Update Interconnect
+
+Update interconnect details for the specified interconnect identifier.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let interconnectId = "interconnectId_example"; // String | The interconnect identifier
+let updateInterconnectRequest = {
+  "name": "My Can Bus 2",
+  "interfaces": [
+    {
+      "deviceId": "fa783ebb-b020-47fb-af74-6898ed59b068",
+      "interfaceId": "can1/0"
+    },
+    {
+      "deviceId": "58db550e-bb96-403a-bcf0-86ff33e5e61d",
+      "interfaceId": "can1/0"
+    },
+    {
+      "deviceId": "bd576aca-9e31-4c6a-817e-f2a38122536e",
+      "interfaceId": "can1/0"
+    }
+  ]
+}; // UpdateInterconnectRequest | The interconnect details to update
+apiInstance.apiV1InterconnectsInterconnectIdPut(interconnectId, updateInterconnectRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **interconnectId** | **String**| The interconnect identifier | 
+ **updateInterconnectRequest** | [**UpdateInterconnectRequest**](UpdateInterconnectRequest.md)| The interconnect details to update | 
+
+### Return type
+
+[**InterconnectResponse**](InterconnectResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## apiV1InterconnectsPost
+
+> InterconnectResponse apiV1InterconnectsPost(createInterconnectRequest)
+
+Create I/O Interconnect
+
+Create an I/O Interconnect for the specified project and attach virtual device interfaces.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let createInterconnectRequest = {
+  "name": "My Interconnect",
+  "protocol": "TCP",
+  "type": "hub",
+  "project": "123e4567-e89b-12d3-a456-426614174000",
+  "interfaces": [{
+     "deviceId": "2b331aaa-de76-4169-8442-9910e9c436fb",
+     "interfaceId": "gpio/7"
+  }]
+}; // CreateInterconnectRequest | The interconnect details
+apiInstance.apiV1InterconnectsPost(createInterconnectRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createInterconnectRequest** | [**CreateInterconnectRequest**](CreateInterconnectRequest.md)| The interconnect details | 
+
+### Return type
+
+[**InterconnectResponse**](InterconnectResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## createAssessment
 
 > AssessmentIdStatus createAssessment(instanceId, createAssessmentDto)
+
+Create assessment
 
 Create assessment
 
@@ -228,6 +598,8 @@ Name | Type | Description  | Notes
 
 Delete assessment
 
+Delete assessment
+
 ### Example
 
 ```javascript
@@ -273,6 +645,8 @@ null (empty response body)
 ## downloadReport
 
 > String downloadReport(instanceId, assessmentId, format)
+
+Download report
 
 Download report
 
@@ -326,6 +700,8 @@ Name | Type | Description  | Notes
 
 Get assessment by ID
 
+Get assessment by ID
+
 ### Example
 
 ```javascript
@@ -374,6 +750,8 @@ Name | Type | Description  | Notes
 
 Get assessments by instanceId
 
+Get assessments by instanceId
+
 ### Example
 
 ```javascript
@@ -417,6 +795,8 @@ Name | Type | Description  | Notes
 ## runTests
 
 > AssessmentIdStatus runTests(instanceId, assessmentId, opts)
+
+Update assessment state and execute MATRIX tests
 
 Update assessment state and execute MATRIX tests
 
@@ -472,6 +852,8 @@ Name | Type | Description  | Notes
 
 Update assessment state and begin device monitoring
 
+Update assessment state and begin device monitoring
+
 ### Example
 
 ```javascript
@@ -517,6 +899,8 @@ null (empty response body)
 ## stopMonitoring
 
 > stopMonitoring(instanceId, assessmentId)
+
+Update assessment state and stop device monitoring
 
 Update assessment state and stop device monitoring
 
@@ -615,6 +999,8 @@ No authorization required
 
 Start activity export
 
+Start activity export
+
 ### Example
 
 ```javascript
@@ -658,6 +1044,8 @@ Name | Type | Description  | Notes
 ## v1ActivityList
 
 > ActivityList v1ActivityList(opts)
+
+Get resource activities
 
 Get resource activities
 
@@ -706,6 +1094,8 @@ Name | Type | Description  | Notes
 ## v1AddProjectKey
 
 > ProjectKey v1AddProjectKey(projectId, projectKey)
+
+Add Project Authorized Key
 
 Add Project Authorized Key
 
@@ -775,7 +1165,7 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new CorelliumClient.CorelliumApi();
 let projectId = "projectId_example"; // String | Project ID - uuid
 let teamId = "teamId_example"; // String | Team ID - uuid
-let roleId = "roleId_example"; // String | Role ID - uuid
+let roleId = "roleId_example"; // String | Role ID
 apiInstance.v1AddTeamRoleToProject(projectId, teamId, roleId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -791,7 +1181,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID - uuid | 
  **teamId** | **String**| Team ID - uuid | 
- **roleId** | **String**| Role ID - uuid | 
+ **roleId** | **String**| Role ID | 
 
 ### Return type
 
@@ -827,7 +1217,7 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new CorelliumClient.CorelliumApi();
 let projectId = "projectId_example"; // String | Project ID - uuid
 let userId = "userId_example"; // String | User ID - uuid
-let roleId = "roleId_example"; // String | Role ID - uuid
+let roleId = "roleId_example"; // String | Role ID
 apiInstance.v1AddUserRoleToProject(projectId, userId, roleId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -843,7 +1233,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID - uuid | 
  **userId** | **String**| User ID - uuid | 
- **roleId** | **String**| Role ID - uuid | 
+ **roleId** | **String**| Role ID | 
 
 ### Return type
 
@@ -915,6 +1305,8 @@ null (empty response body)
 
 Check if App subsystem is ready
 
+Check if App subsystem is ready
+
 ### Example
 
 ```javascript
@@ -958,6 +1350,8 @@ Name | Type | Description  | Notes
 ## v1AgentDeleteFile
 
 > v1AgentDeleteFile(instanceId, filePath)
+
+Delete a File on VM
 
 Delete a File on VM
 
@@ -1006,6 +1400,8 @@ null (empty response body)
 ## v1AgentGetFile
 
 > File v1AgentGetFile(instanceId, filePath)
+
+Download a File from VM
 
 Download a File from VM
 
@@ -1157,6 +1553,8 @@ null (empty response body)
 
 Install a Profile to VM
 
+Install a Profile to VM
+
 ### Example
 
 ```javascript
@@ -1202,6 +1600,8 @@ null (empty response body)
 ## v1AgentKillApp
 
 > Object v1AgentKillApp(instanceId, bundleId)
+
+Kill an App
 
 Kill an App
 
@@ -1253,6 +1653,8 @@ Name | Type | Description  | Notes
 
 List App Icons
 
+List App Icons as base64 data
+
 ### Example
 
 ```javascript
@@ -1298,6 +1700,8 @@ Name | Type | Description  | Notes
 ## v1AgentListApps
 
 > AgentAppsList v1AgentListApps(instanceId)
+
+List Apps
 
 List Apps
 
@@ -1347,6 +1751,8 @@ Name | Type | Description  | Notes
 
 List Apps Status
 
+List Apps Status
+
 ### Example
 
 ```javascript
@@ -1393,6 +1799,8 @@ Name | Type | Description  | Notes
 
 List Profiles
 
+List Profiles
+
 ### Example
 
 ```javascript
@@ -1436,6 +1844,8 @@ Name | Type | Description  | Notes
 ## v1AgentRunApp
 
 > Object v1AgentRunApp(instanceId, bundleId)
+
+Run an App
 
 Run an App
 
@@ -1487,6 +1897,8 @@ Name | Type | Description  | Notes
 
 Change Attrs of a File on VM
 
+Change Attrs of a File on VM
+
 ### Example
 
 ```javascript
@@ -1528,12 +1940,14 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## v1AgentSystemGetAdbAuth
 
 > AgentSystemAdbAuth v1AgentSystemGetAdbAuth(instanceId)
+
+Get ADB Auth Setting (AOSP only)
 
 Get ADB Auth Setting (AOSP only)
 
@@ -1583,6 +1997,8 @@ Name | Type | Description  | Notes
 
 Get IP of eth0 (AOSP only)
 
+Get IP of eth0 (AOSP only)
+
 ### Example
 
 ```javascript
@@ -1626,6 +2042,8 @@ Name | Type | Description  | Notes
 ## v1AgentSystemGetProp
 
 > AgentValueReturn v1AgentSystemGetProp(instanceId, agentSystemGetPropBody)
+
+Get System Property (AOSP only)
 
 Get System Property (AOSP only)
 
@@ -1676,6 +2094,8 @@ Name | Type | Description  | Notes
 ## v1AgentSystemInstallOpenGApps
 
 > v1AgentSystemInstallOpenGApps(instanceId, body)
+
+Install OpenGApps (AOSP only)
 
 Install OpenGApps (AOSP only)
 
@@ -1731,6 +2151,8 @@ null (empty response body)
 
 Lock Device (iOS Only)
 
+Lock Device (iOS Only)
+
 ### Example
 
 ```javascript
@@ -1774,6 +2196,8 @@ null (empty response body)
 ## v1AgentSystemSetAdbAuth
 
 > v1AgentSystemSetAdbAuth(instanceId, agentSystemAdbAuth)
+
+Set ADB Auth Setting (AOSP only)
 
 Set ADB Auth Setting (AOSP only)
 
@@ -1827,6 +2251,8 @@ null (empty response body)
 
 Set Hostname of instance
 
+Set Hostname of instance
+
 ### Example
 
 ```javascript
@@ -1872,6 +2298,8 @@ null (empty response body)
 ## v1AgentSystemShutdown
 
 > v1AgentSystemShutdown(instanceId)
+
+Instruct VM to halt
 
 Instruct VM to halt
 
@@ -1921,6 +2349,8 @@ null (empty response body)
 
 Unlock Device (iOS Only)
 
+Unlock Device (iOS Only)
+
 ### Example
 
 ```javascript
@@ -1964,6 +2394,8 @@ null (empty response body)
 ## v1AgentUninstallApp
 
 > Object v1AgentUninstallApp(instanceId, bundleId)
+
+Uninstall an App
 
 Uninstall an App
 
@@ -2015,6 +2447,8 @@ Name | Type | Description  | Notes
 
 Uninstall a Profile from VM
 
+Uninstall a Profile from VM
+
 ### Example
 
 ```javascript
@@ -2063,6 +2497,8 @@ null (empty response body)
 
 Upload a file to VM
 
+Upload a file to VM
+
 ### Example
 
 ```javascript
@@ -2107,9 +2543,61 @@ null (empty response body)
 - **Accept**: application/json
 
 
+## v1AttachInstanceInterface
+
+> v1AttachInstanceInterface(instanceId, attachInterfaceRequest)
+
+Attach I/O Interface
+
+Attach an I/O interface to an I/O interconnect for the specified instance identifier.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+let attachInterfaceRequest = new CorelliumClient.AttachInterfaceRequest(); // AttachInterfaceRequest | Interface attachment request
+apiInstance.v1AttachInstanceInterface(instanceId, attachInterfaceRequest).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **String**| Instance ID - uuid | 
+ **attachInterfaceRequest** | [**AttachInterfaceRequest**](AttachInterfaceRequest.md)| Interface attachment request | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## v1AuthLogin
 
 > Token v1AuthLogin(body)
+
+Log In
 
 Log In
 
@@ -2154,7 +2642,9 @@ No authorization required
 
 ## v1BtracePreauthorize
 
-> Object v1BtracePreauthorize(instanceId)
+> Token v1BtracePreauthorize(instanceId)
+
+Pre-authorize an btrace download
 
 Pre-authorize an btrace download
 
@@ -2186,7 +2676,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Token**](Token.md)
 
 ### Authorization
 
@@ -2198,55 +2688,11 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## v1CheckSubdomainExistence
-
-> CheckSubdomainResponse v1CheckSubdomainExistence(v1CheckSubdomainExistenceParameters)
-
-Check the existence of a subdomain
-
-### Example
-
-```javascript
-import CorelliumClient from '@corellium/client-api';
-let defaultClient = CorelliumClient.ApiClient.instance;
-// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
-let BearerAuth = defaultClient.authentications['BearerAuth'];
-BearerAuth.accessToken = "YOUR ACCESS TOKEN"
-
-let apiInstance = new CorelliumClient.CorelliumApi();
-let v1CheckSubdomainExistenceParameters = new CorelliumClient.V1CheckSubdomainExistenceParameters(); // V1CheckSubdomainExistenceParameters | application/json
-apiInstance.v1CheckSubdomainExistence(v1CheckSubdomainExistenceParameters).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **v1CheckSubdomainExistenceParameters** | [**V1CheckSubdomainExistenceParameters**](V1CheckSubdomainExistenceParameters.md)| application/json | 
-
-### Return type
-
-[**CheckSubdomainResponse**](CheckSubdomainResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
 ## v1ClearCoreTrace
 
 > v1ClearCoreTrace(instanceId)
+
+Clear CoreTrace logs
 
 Clear CoreTrace logs
 
@@ -2296,6 +2742,8 @@ null (empty response body)
 
 Clear HyperTrace logs
 
+Clear HyperTrace logs
+
 ### Example
 
 ```javascript
@@ -2339,6 +2787,8 @@ null (empty response body)
 ## v1ClearHyperTraceHooks
 
 > v1ClearHyperTraceHooks(instanceId)
+
+Clear Hooks on an instance
 
 Clear Hooks on an instance
 
@@ -2388,6 +2838,8 @@ null (empty response body)
 
 Clear Panics
 
+Clear Panics
+
 ### Example
 
 ```javascript
@@ -2428,9 +2880,942 @@ null (empty response body)
 - **Accept**: application/json
 
 
+## v1ClusterConfigGet
+
+> Object v1ClusterConfigGet()
+
+Get cluster configuration
+
+Get cluster configuration
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+apiInstance.v1ClusterConfigGet().then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterConfigPatch
+
+> v1ClusterConfigPatch(clusterConfigurationPayload)
+
+Update cluster configuration
+
+Update cluster configuration
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let clusterConfigurationPayload = new CorelliumClient.ClusterConfigurationPayload(); // ClusterConfigurationPayload | Cluster Configuration Payload
+apiInstance.v1ClusterConfigPatch(clusterConfigurationPayload).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **clusterConfigurationPayload** | [**ClusterConfigurationPayload**](ClusterConfigurationPayload.md)| Cluster Configuration Payload | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceConfigGet
+
+> v1ClusterFirmwareServiceConfigGet()
+
+Fetch firmware service configuration
+
+Returns a firmware service configuration object
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+apiInstance.v1ClusterFirmwareServiceConfigGet().then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceConfigPatch
+
+> v1ClusterFirmwareServiceConfigPatch(firmwareServiceConfiguration)
+
+Update firmware service configuration
+
+Updates firmware service configuration
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let firmwareServiceConfiguration = new CorelliumClient.FirmwareServiceConfiguration(); // FirmwareServiceConfiguration | Firmware configuration payload
+apiInstance.v1ClusterFirmwareServiceConfigPatch(firmwareServiceConfiguration).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **firmwareServiceConfiguration** | [**FirmwareServiceConfiguration**](FirmwareServiceConfiguration.md)| Firmware configuration payload | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceConfigPut
+
+> v1ClusterFirmwareServiceConfigPut(firmwareServiceConfiguration)
+
+Set firmware service configuration
+
+Sets firmware service configuration
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let firmwareServiceConfiguration = new CorelliumClient.FirmwareServiceConfiguration(); // FirmwareServiceConfiguration | Firmware configuration payload
+apiInstance.v1ClusterFirmwareServiceConfigPut(firmwareServiceConfiguration).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **firmwareServiceConfiguration** | [**FirmwareServiceConfiguration**](FirmwareServiceConfiguration.md)| Firmware configuration payload | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceDevicesGet
+
+> [Device] v1ClusterFirmwareServiceDevicesGet(opts)
+
+Fetch devices from the firmware service
+
+Proxies a request to the firmware service to retrieve a list of devices.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let opts = {
+  'limit': 3.4, // Number | Number of results to return (min: 1, max: 10000, default: 100)
+  'offset': 3.4, // Number | Index of the first row to return (default: 0)
+  'search': "search_example", // String | Case-insensitive partial match across name, model, platform, and hwmodel fields
+  'order': "order_example", // String | Comma-separated field names for sorting. Prefix with '-' for ascending order (e.g., 'name,-platform'). Allowed fields: name, model, type, platform, hwmodel  Filtering options:
+  'type': "type_example", // String | Filter by exact type. Example: coreimg
+  'model': "model_example", // String | Filter by exact model. Example: Example: iPhone8,1
+  'name': "name_example", // String | Filter by exact name. Example: iPhone6s
+  'platform': "platform_example" // String | Filter by exact platform. Example: s5l8960x
+};
+apiInstance.v1ClusterFirmwareServiceDevicesGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Number**| Number of results to return (min: 1, max: 10000, default: 100) | [optional] 
+ **offset** | **Number**| Index of the first row to return (default: 0) | [optional] 
+ **search** | **String**| Case-insensitive partial match across name, model, platform, and hwmodel fields | [optional] 
+ **order** | **String**| Comma-separated field names for sorting. Prefix with &#39;-&#39; for ascending order (e.g., &#39;name,-platform&#39;). Allowed fields: name, model, type, platform, hwmodel  Filtering options: | [optional] 
+ **type** | **String**| Filter by exact type. Example: coreimg | [optional] 
+ **model** | **String**| Filter by exact model. Example: Example: iPhone8,1 | [optional] 
+ **name** | **String**| Filter by exact name. Example: iPhone6s | [optional] 
+ **platform** | **String**| Filter by exact platform. Example: s5l8960x | [optional] 
+
+### Return type
+
+[**[Device]**](Device.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceFirmwareAssetsAssetURLDelete
+
+> v1ClusterFirmwareServiceFirmwareAssetsAssetURLDelete(assetURL)
+
+Delete a firmware asset by its URL
+
+Proxies a request to the firmware service to delete a firmware asset by URL.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let assetURL = "assetURL_example"; // String | The URL-encoded firmware asset URL to delete - format:uri - pattern:^[A-Za-z0-9\\-._~:/?#[\\]@!$&'()*+,;=%]+$
+apiInstance.v1ClusterFirmwareServiceFirmwareAssetsAssetURLDelete(assetURL).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetURL** | **String**| The URL-encoded firmware asset URL to delete - format:uri - pattern:^[A-Za-z0-9\\-._~:/?#[\\]@!$&amp;&#39;()*+,;&#x3D;%]+$ | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceFirmwareAssetsAssetURLExtendedGet
+
+> ExtendedFirmwareAssetInfo v1ClusterFirmwareServiceFirmwareAssetsAssetURLExtendedGet(assetURL)
+
+Fetch extended firmware-asset details including instances and associated IPSWs
+
+Retrieves extended information about a firmware including all instances using it and associated firmware assets.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let assetURL = "assetURL_example"; // String | The URL-encoded firmware asset to delete. Example: H4RUO0MX-Fz0ka2Q2vCfvP-27ElNZw5bWJEfyF04AxA=
+apiInstance.v1ClusterFirmwareServiceFirmwareAssetsAssetURLExtendedGet(assetURL).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetURL** | **String**| The URL-encoded firmware asset to delete. Example: H4RUO0MX-Fz0ka2Q2vCfvP-27ElNZw5bWJEfyF04AxA&#x3D; | 
+
+### Return type
+
+[**ExtendedFirmwareAssetInfo**](ExtendedFirmwareAssetInfo.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceFirmwareAssetsGet
+
+> [FirmwareAsset] v1ClusterFirmwareServiceFirmwareAssetsGet(opts)
+
+Fetch firmware assets from the firmware service
+
+Proxies a request to the firmware service to retrieve a list of firmware assets.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let opts = {
+  'limit': 3.4, // Number | Number of results to return (min: 1, max: 10000, default: 100)
+  'offset': 3.4, // Number | Index of the first row to return (default: 0)
+  'order': "order_example", // String | Comma-separated field names for sorting. Prefix with '-' for ascending order (e.g., 'url,-domain').
+  'search': "search_example" // String | Case-insensitive partial match across url, domain
+};
+apiInstance.v1ClusterFirmwareServiceFirmwareAssetsGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Number**| Number of results to return (min: 1, max: 10000, default: 100) | [optional] 
+ **offset** | **Number**| Index of the first row to return (default: 0) | [optional] 
+ **order** | **String**| Comma-separated field names for sorting. Prefix with &#39;-&#39; for ascending order (e.g., &#39;url,-domain&#39;). | [optional] 
+ **search** | **String**| Case-insensitive partial match across url, domain | [optional] 
+
+### Return type
+
+[**[FirmwareAsset]**](FirmwareAsset.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceFirmwareAssetsPost
+
+> String v1ClusterFirmwareServiceFirmwareAssetsPost(body)
+
+Add firmware assets via the firmware service
+
+Proxies a request to the firmware service to add firmware assets.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let body = {
+  "https://wkms-public.apple.com/fcs-keys/0-rpBmpVnBmLtxdIwb97a_jAodE52Gv8Al_CN8DdwzQ=": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JR0hBZ0VBTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEJHMHdhd0lCQVFRZ1plQ25uTW5CZEx3RkM1K2EKUU9ITGswQ1Z1aGJHWE1kUlBiekJOMTREOWp1aFJBTkNBQVRLT3NyZUc4VG1XbExTeU1KUnBSWTA2N1NudFhmZgpkakhWenQwN1ZZVm1wZ1dGZEJGUERGTFdiQkYrYlpQeGRJVW14dzFMN3NlMEUrdE1DcTk4bkEyMQotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg==",
+  "https://wkms-public.apple.com/fcs-keys/09QNzDMRwGnqUMjbRQcsH7sHx2GJUub-NmLLpIsd8Yc=": "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JR0hBZ0VBTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEJHMHdhd0lCQVFRZ0QyeTRzZE1QNXE2eHZ4NTIKMFNqaCt1S0JkcWVTRlF2T083Rm9PaHg1RHZxaFJBTkNBQVRLbEMvdXhKa3Q4d0FhS1Fzd3paeVJ4WWVTN0pOVAowRlFsS0w3S0hZb1k0U1FWekZWNTBkQkhGeGRVMHVaeGN3Rk9MaW1MTVZZaHBtREQ0enFpZGtPeAotLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tCg=="
+}; // Object | Firmware assets payload
+apiInstance.v1ClusterFirmwareServiceFirmwareAssetsPost(body).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **Object**| Firmware assets payload | 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: text/html, application/json
+
+
+## v1ClusterFirmwareServiceFirmwaresFilenameDelete
+
+> v1ClusterFirmwareServiceFirmwaresFilenameDelete(filename)
+
+Delete a firmware by filename from the firmware service
+
+Proxies a request to the firmware service to delete a firmware by filename.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let filename = "filename_example"; // String | The filename of the firmware to delete
+apiInstance.v1ClusterFirmwareServiceFirmwaresFilenameDelete(filename).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filename** | **String**| The filename of the firmware to delete | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterFirmwareServiceFirmwaresGet
+
+> [Firmware] v1ClusterFirmwareServiceFirmwaresGet(opts)
+
+Fetch firmwares from the firmware service
+
+Proxies a request to the firmware service to retrieve a list of firmwares.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let opts = {
+  'limit': 3.4, // Number | Number of results to return (min: 1, max: 10000, default: 100)
+  'offset': 3.4, // Number | Index of the first row to return (default: 0)
+  'search': "search_example", // String | Case-insensitive partial match across filename, model, type, version and buildid fields
+  'order': "order_example", // String | Comma-separated field names for sorting. Prefix with '-' for ascending order (e.g., 'name,-platform'). Allowed fields: filename, model, type, version, buildid  Filtering options:
+  'filename': "filename_example", // String | Filter by exact filename. Example: iPhone_4.7_P3_12.1.4_16D57_Restore.ipsw
+  'model': "model_example", // String | Filter by exact model. Example: iPhone10,4
+  'type': "type_example", // String | Filter by exact type. Example: ipsw
+  'version': "version_example", // String | Filter by exact version. Example: 12.1.4
+  'buildid': "buildid_example", // String | Filter by exact buildid. Example: 16D57
+  'firmwareAssets': "firmwareAssets_example", // String | Filter by exact asset URL/ID. Example: https://wkms-public.apple.com/fcs-keys/rl_td3o_0EtXT8t6HvVJoeWXnoBuzumHyUTD8-MUaF8= -OR- rl_td3o_0EtXT8t6HvVJoeWXnoBuzumHyUTD8-MUaF8=
+  'installed': true // Boolean | Filter by installed status
+};
+apiInstance.v1ClusterFirmwareServiceFirmwaresGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Number**| Number of results to return (min: 1, max: 10000, default: 100) | [optional] 
+ **offset** | **Number**| Index of the first row to return (default: 0) | [optional] 
+ **search** | **String**| Case-insensitive partial match across filename, model, type, version and buildid fields | [optional] 
+ **order** | **String**| Comma-separated field names for sorting. Prefix with &#39;-&#39; for ascending order (e.g., &#39;name,-platform&#39;). Allowed fields: filename, model, type, version, buildid  Filtering options: | [optional] 
+ **filename** | **String**| Filter by exact filename. Example: iPhone_4.7_P3_12.1.4_16D57_Restore.ipsw | [optional] 
+ **model** | **String**| Filter by exact model. Example: iPhone10,4 | [optional] 
+ **type** | **String**| Filter by exact type. Example: ipsw | [optional] 
+ **version** | **String**| Filter by exact version. Example: 12.1.4 | [optional] 
+ **buildid** | **String**| Filter by exact buildid. Example: 16D57 | [optional] 
+ **firmwareAssets** | **String**| Filter by exact asset URL/ID. Example: https://wkms-public.apple.com/fcs-keys/rl_td3o_0EtXT8t6HvVJoeWXnoBuzumHyUTD8-MUaF8&#x3D; -OR- rl_td3o_0EtXT8t6HvVJoeWXnoBuzumHyUTD8-MUaF8&#x3D; | [optional] 
+ **installed** | **Boolean**| Filter by installed status | [optional] 
+
+### Return type
+
+[**[Firmware]**](Firmware.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterNodesGet
+
+> [NodeInformation] v1ClusterNodesGet(opts)
+
+List servers in the cluster
+
+List servers in the cluster
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let opts = {
+  'limit': 3.4, // Number | limit for pagination results, defaults to 100
+  'offset': 3.4 // Number | offset for pagination results, defaults to 0
+};
+apiInstance.v1ClusterNodesGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Number**| limit for pagination results, defaults to 100 | [optional] 
+ **offset** | **Number**| offset for pagination results, defaults to 0 | [optional] 
+
+### Return type
+
+[**[NodeInformation]**](NodeInformation.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterNodesNodeIdConsoleGet
+
+> v1ClusterNodesNodeIdConsoleGet(nodeId)
+
+Access node console via SSH
+
+Access node console via SSH (WebSocket upgrade)
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let nodeId = "nodeId_example"; // String | Node ID
+apiInstance.v1ClusterNodesNodeIdConsoleGet(nodeId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nodeId** | **String**| Node ID | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterNodesNodeIdGet
+
+> NodeInformation v1ClusterNodesNodeIdGet(nodeId)
+
+Get node details by ID
+
+Get node details by ID
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let nodeId = "nodeId_example"; // String | Node ID
+apiInstance.v1ClusterNodesNodeIdGet(nodeId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nodeId** | **String**| Node ID | 
+
+### Return type
+
+[**NodeInformation**](NodeInformation.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterStorageGet
+
+> GetStorageResponse v1ClusterStorageGet(opts)
+
+Get storage devices
+
+List all attached storage devices. This endpoint is only available to cluster administrators.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let opts = {
+  'limit': 3.4, // Number | Maximum number of results to return (1–1000, default: 100)
+  'offset': 3.4, // Number | Number of results to skip (default: 0)
+  'device': "device_example", // String | Filter by device name (partial match)
+  'fsType': "fsType_example", // String | Filter by filesystem type (comma separated)
+  'fsUUID': "fsUUID_example", // String | Filter by filesystem UUID (partial match)
+  'label': "label_example", // String | Filter by label (partial match)
+  'serial': "serial_example", // String | Filter by serial number (partial match)
+  'vendor': "vendor_example", // String | Filter by vendor (partial match)
+  'model': "model_example", // String | Filter by model (partial match)
+  'mountPolicy': "mountPolicy_example", // String | Filter by mount policy (RO or RW)
+  'sort': "sort_example" // String | Sort order (e.g. \"device\" or \"-device\")
+};
+apiInstance.v1ClusterStorageGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Number**| Maximum number of results to return (1–1000, default: 100) | [optional] 
+ **offset** | **Number**| Number of results to skip (default: 0) | [optional] 
+ **device** | **String**| Filter by device name (partial match) | [optional] 
+ **fsType** | **String**| Filter by filesystem type (comma separated) | [optional] 
+ **fsUUID** | **String**| Filter by filesystem UUID (partial match) | [optional] 
+ **label** | **String**| Filter by label (partial match) | [optional] 
+ **serial** | **String**| Filter by serial number (partial match) | [optional] 
+ **vendor** | **String**| Filter by vendor (partial match) | [optional] 
+ **model** | **String**| Filter by model (partial match) | [optional] 
+ **mountPolicy** | **String**| Filter by mount policy (RO or RW) | [optional] 
+ **sort** | **String**| Sort order (e.g. \&quot;device\&quot; or \&quot;-device\&quot;) | [optional] 
+
+### Return type
+
+[**GetStorageResponse**](GetStorageResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterStorageIdAttachPost
+
+> Object v1ClusterStorageIdAttachPost(id)
+
+Mount and attach a storage device
+
+Initiates an asynchronous mount job for a registered storage device. If already mounted, returns status 200. If not, queues a background job and returns 202.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let id = "id_example"; // String | The unique identifier of the storage media
+apiInstance.v1ClusterStorageIdAttachPost(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| The unique identifier of the storage media | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1ClusterStorageIdEjectPost
+
+> Object v1ClusterStorageIdEjectPost(id)
+
+Eject/Unmount removable media
+
+Initiates an asynchronous unmount job for the physical storage device. If the device is already unmounted, returns success. If mounted, creates a background job to safely unmount.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let id = "id_example"; // String | Storage device identifier (UUID)
+apiInstance.v1ClusterStorageIdEjectPost(id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Storage device identifier (UUID) | 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## v1CreateDomainAuthProvider
 
 > DomainAuthProviderResponse v1CreateDomainAuthProvider(domainId, domainAuthProviderRequest)
+
+Create a new auth provider for a domain
 
 Create a new auth provider for a domain
 
@@ -2492,6 +3877,8 @@ Name | Type | Description  | Notes
 
 Create hypervisor hook for Instance
 
+Create hypervisor hook for Instance
+
 ### Example
 
 ```javascript
@@ -2540,6 +3927,8 @@ Name | Type | Description  | Notes
 
 Create a new Image
 
+Create a new Image. Accepts multipart/form-data (with optional file upload) or application/json (metadata only).
+
 ### Example
 
 ```javascript
@@ -2550,11 +3939,12 @@ let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
-let type = "type_example"; // String | Image type
+let type = "type_example"; // String | Image type: 'iotfirmware' | 'kernel' | 'devicetree' | 'ramdisk' | 'loaderfile' | 'clbi' | 'ufd' | 'media' | 'sepfw' | 'seprom' | 'bootrom' | 'llb' | 'iboot' | 'ibootdata' | 'fw' | 'fwasset' | 'partition' | 'extension' | 'vmfile' | 'backup' | 'activity-export'
 let encoding = "encoding_example"; // String | How the file is stored
 let opts = {
   'encapsulated': true, // Boolean | set to false if the uploaded file is not encapsulated inside an outer zipfile
   'name': "name_example", // String | Image name
+  'fullPath': "fullPath_example", // String | Full local path to image file
   'project': "project_example", // String | Project ID
   'instance': "instance_example", // String | Instance ID
   'file': "/path/to/file" // File | Optionally the actual file
@@ -2572,10 +3962,11 @@ apiInstance.v1CreateImage(type, encoding, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| Image type | 
+ **type** | **String**| Image type: &#39;iotfirmware&#39; | &#39;kernel&#39; | &#39;devicetree&#39; | &#39;ramdisk&#39; | &#39;loaderfile&#39; | &#39;clbi&#39; | &#39;ufd&#39; | &#39;media&#39; | &#39;sepfw&#39; | &#39;seprom&#39; | &#39;bootrom&#39; | &#39;llb&#39; | &#39;iboot&#39; | &#39;ibootdata&#39; | &#39;fw&#39; | &#39;fwasset&#39; | &#39;partition&#39; | &#39;extension&#39; | &#39;vmfile&#39; | &#39;backup&#39; | &#39;activity-export&#39; | 
  **encoding** | **String**| How the file is stored | 
  **encapsulated** | **Boolean**| set to false if the uploaded file is not encapsulated inside an outer zipfile | [optional] 
  **name** | **String**| Image name | [optional] 
+ **fullPath** | **String**| Full local path to image file | [optional] 
  **project** | **String**| Project ID | [optional] 
  **instance** | **String**| Instance ID | [optional] 
  **file** | **File**| Optionally the actual file | [optional] 
@@ -2597,6 +3988,8 @@ Name | Type | Description  | Notes
 ## v1CreateInstance
 
 > InstanceReturn v1CreateInstance(instanceCreateOptions)
+
+Create Instance
 
 Create Instance
 
@@ -2647,7 +4040,7 @@ Name | Type | Description  | Notes
 
 ## v1CreateNetworkConnection
 
-> v1CreateNetworkConnection(createNetworkConnectionOptions)
+> NetworkConnection v1CreateNetworkConnection(createNetworkConnectionOptions)
 
 Create a new Network Connection
 
@@ -2667,22 +4060,11 @@ let createNetworkConnectionOptions = {
   "provider": "openvpn",
   "name": "My OpenVPN Connection",
   "config": {
-    "config": "client\n" +
-      "dev tun\n" +
-      "proto tcp\n" +
-      "remote my-server-1 1194\n" +
-      "resolv-retry infinite\n" +
-      "nobind\n" +
-      "persist-key\n" +
-      "persist-tun\n" +
-      "remote-cert-tls server\n" +
-      "tls-auth ta.key 1\n" +
-      "cipher AES-256-CBC\n" +
-      "verb 3\n"
+    "config": "client\ndev tun\nproto tcp\nremote my-server-1 1194\nresolv-retry infinite\nnobind\npersist-key\npersist-tun\nremote-cert-tls server\ntls-auth ta.key 1\ncipher AES-256-CBC\nverb 3\n"
   }
 }; // CreateNetworkConnectionOptions | Network Connection Options
-apiInstance.v1CreateNetworkConnection(createNetworkConnectionOptions).then(() => {
-  console.log('API called successfully.');
+apiInstance.v1CreateNetworkConnection(createNetworkConnectionOptions).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -2698,7 +4080,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**NetworkConnection**](NetworkConnection.md)
 
 ### Authorization
 
@@ -2707,12 +4089,14 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## v1CreateProject
 
 > Project v1CreateProject(project)
+
+Create a Project
 
 Create a Project
 
@@ -2772,6 +4156,8 @@ Name | Type | Description  | Notes
 
 Create Instance Snapshot
 
+Create Instance Snapshot
+
 ### Example
 
 ```javascript
@@ -2816,7 +4202,9 @@ Name | Type | Description  | Notes
 
 ## v1CreateUser
 
-> Object v1CreateUser(body)
+> UserCreateReturn v1CreateUser(userCreate)
+
+Create User
 
 Create User
 
@@ -2830,8 +4218,11 @@ let BearerAuth = defaultClient.authentications['BearerAuth'];
 BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
-let body = {key: null}; // Object | User data
-apiInstance.v1CreateUser(body).then((data) => {
+let userCreate = {
+  "name": "test",
+  "label": "Project Admin",
+}; // UserCreate | User data
+apiInstance.v1CreateUser(userCreate).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -2844,11 +4235,11 @@ apiInstance.v1CreateUser(body).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**| User data | 
+ **userCreate** | [**UserCreate**](UserCreate.md)| User data | 
 
 ### Return type
 
-**Object**
+[**UserCreateReturn**](UserCreateReturn.md)
 
 ### Authorization
 
@@ -2860,9 +4251,59 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## v1DeleteClusterSnapshot
+
+> v1DeleteClusterSnapshot(snapshotId)
+
+Delete a Cluster Snapshot
+
+Delete a Cluster Snapshot
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let snapshotId = "snapshotId_example"; // String | Snapshot ID - uuid
+apiInstance.v1DeleteClusterSnapshot(snapshotId).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **snapshotId** | **String**| Snapshot ID - uuid | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## v1DeleteDomainAuthProvider
 
-> Object v1DeleteDomainAuthProvider(domainId, providerId)
+> v1DeleteDomainAuthProvider(domainId, providerId)
+
+Delete an auth provider from a domain
 
 Delete an auth provider from a domain
 
@@ -2878,8 +4319,8 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new CorelliumClient.CorelliumApi();
 let domainId = "domainId_example"; // String | Domain ID - uuid
 let providerId = "providerId_example"; // String | Provider ID - uuid
-apiInstance.v1DeleteDomainAuthProvider(domainId, providerId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.v1DeleteDomainAuthProvider(domainId, providerId).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -2896,7 +4337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+null (empty response body)
 
 ### Authorization
 
@@ -2911,6 +4352,8 @@ Name | Type | Description  | Notes
 ## v1DeleteHook
 
 > v1DeleteHook(hookId)
+
+Delete an existing hypervisor hook
 
 Delete an existing hypervisor hook
 
@@ -2960,6 +4403,8 @@ null (empty response body)
 
 Delete Image
 
+Delete Image
+
 ### Example
 
 ```javascript
@@ -3006,6 +4451,8 @@ null (empty response body)
 
 Remove Instance
 
+Remove Instance
+
 ### Example
 
 ```javascript
@@ -3049,6 +4496,8 @@ null (empty response body)
 ## v1DeleteInstanceSnapshot
 
 > v1DeleteInstanceSnapshot(instanceId, snapshotId)
+
+Delete an Instance Snapshot
 
 Delete an Instance Snapshot
 
@@ -3152,6 +4601,8 @@ null (empty response body)
 
 Delete a Project
 
+Delete a Project
+
 ### Example
 
 ```javascript
@@ -3195,6 +4646,8 @@ null (empty response body)
 ## v1DeleteSnapshot
 
 > v1DeleteSnapshot(snapshotId)
+
+Delete a Snapshot
 
 Delete a Snapshot
 
@@ -3295,7 +4748,9 @@ Name | Type | Description  | Notes
 
 ## v1DeleteUser
 
-> Object v1DeleteUser(userId)
+> v1DeleteUser(userId)
+
+Delete User
 
 Delete User
 
@@ -3310,8 +4765,8 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
 let userId = "userId_example"; // String | userId - uuid
-apiInstance.v1DeleteUser(userId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+apiInstance.v1DeleteUser(userId).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -3327,7 +4782,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+null (empty response body)
 
 ### Authorization
 
@@ -3339,9 +4794,63 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## v1DetachInstanceInterface
+
+> v1DetachInstanceInterface(instanceId, interfaceId, detachInterfaceRequest)
+
+Detach I/O Interface
+
+Detach an I/O interface from an I/O interconnect for the specified instance identifier.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let instanceId = "instanceId_example"; // String | Instance ID - uuid
+let interfaceId = "interfaceId_example"; // String | Interface ID
+let detachInterfaceRequest = new CorelliumClient.DetachInterfaceRequest(); // DetachInterfaceRequest | Interface detachment request
+apiInstance.v1DetachInstanceInterface(instanceId, interfaceId, detachInterfaceRequest).then(() => {
+  console.log('API called successfully.');
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **String**| Instance ID - uuid | 
+ **interfaceId** | **String**| Interface ID | 
+ **detachInterfaceRequest** | [**DetachInterfaceRequest**](DetachInterfaceRequest.md)| Interface detachment request | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## v1DisableExposePort
 
 > v1DisableExposePort(instanceId)
+
+Disable an exposed port on an instance for device access.
 
 Disable an exposed port on an instance for device access.
 
@@ -3391,6 +4900,8 @@ null (empty response body)
 
 Download activity
 
+Download activity for a given task
+
 ### Example
 
 ```javascript
@@ -3434,6 +4945,8 @@ Name | Type | Description  | Notes
 ## v1EnableExposePort
 
 > v1EnableExposePort(instanceId)
+
+Enable an exposed port on an instance for device access.
 
 Enable an exposed port on an instance for device access.
 
@@ -3483,6 +4996,8 @@ null (empty response body)
 
 Execute Hooks on an instance
 
+Execute Hooks on an instance
+
 ### Example
 
 ```javascript
@@ -3526,6 +5041,8 @@ null (empty response body)
 ## v1GetActivityExportStatus
 
 > ActivityList v1GetActivityExportStatus(taskId)
+
+Get export task status
 
 Get export task status
 
@@ -3575,6 +5092,8 @@ Name | Type | Description  | Notes
 
 Get all export tasks for user
 
+Get all export tasks for user
+
 ### Example
 
 ```javascript
@@ -3611,9 +5130,109 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
+## v1GetClusterSnapshot
+
+> ClusterSnapshot v1GetClusterSnapshot(snapshotId)
+
+Get Cluster Snapshot
+
+Get Cluster Snapshot
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let snapshotId = "snapshotId_example"; // String | Snapshot ID - uuid
+apiInstance.v1GetClusterSnapshot(snapshotId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **snapshotId** | **String**| Snapshot ID - uuid | 
+
+### Return type
+
+[**ClusterSnapshot**](ClusterSnapshot.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1GetClusterSnapshots
+
+> SnapshotList v1GetClusterSnapshots(opts)
+
+Get Cluster Snapshots
+
+Get Cluster Snapshots
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let opts = {
+  'request': {key: null} // SnapshotRequest | 
+};
+apiInstance.v1GetClusterSnapshots(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**SnapshotRequest**](.md)|  | [optional] 
+
+### Return type
+
+[**SnapshotList**](SnapshotList.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## v1GetConfig
 
 > ConfigResponse v1GetConfig()
+
+Get all configs
 
 Get all configs
 
@@ -3652,6 +5271,8 @@ No authorization required
 ## v1GetDomainAuthProviders
 
 > [DomainAuthProviderResponse] v1GetDomainAuthProviders(domainId)
+
+Return all configured auth providers for a domain (including globally configured providers)
 
 Return all configured auth providers for a domain (including globally configured providers)
 
@@ -3701,6 +5322,8 @@ Name | Type | Description  | Notes
 
 Get hypervisor hook by id
 
+Get hypervisor hook by id
+
 ### Example
 
 ```javascript
@@ -3744,6 +5367,8 @@ Name | Type | Description  | Notes
 ## v1GetHooks
 
 > [Hook] v1GetHooks(instanceId, opts)
+
+Get all hypervisor hooks for Instance
 
 Get all hypervisor hooks for Instance
 
@@ -3801,6 +5426,8 @@ Name | Type | Description  | Notes
 
 Get Image Metadata
 
+Get Image Metadata
+
 ### Example
 
 ```javascript
@@ -3847,6 +5474,8 @@ Name | Type | Description  | Notes
 
 Get all Images Metadata
 
+Get all Images Metadata
+
 ### Example
 
 ```javascript
@@ -3889,9 +5518,59 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## v1GetInstallFirmwareStatus
+
+> InstallFirmwareResponse v1GetInstallFirmwareStatus(taskId)
+
+Query install firmware request status.
+
+Returns the status of an install firmware request.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let taskId = "taskId_example"; // String | Task ID - uuid
+apiInstance.v1GetInstallFirmwareStatus(taskId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **taskId** | **String**| Task ID - uuid | 
+
+### Return type
+
+[**InstallFirmwareResponse**](InstallFirmwareResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## v1GetInstance
 
 > Instance v1GetInstance(instanceId, opts)
+
+Get Instance
 
 Get Instance
 
@@ -3945,6 +5624,8 @@ Name | Type | Description  | Notes
 
 Get console websocket URL
 
+Get console websocket URL
+
 ### Example
 
 ```javascript
@@ -3988,6 +5669,8 @@ Name | Type | Description  | Notes
 ## v1GetInstanceConsoleLog
 
 > String v1GetInstanceConsoleLog(instanceId)
+
+Get Console Log
 
 Get Console Log
 
@@ -4037,6 +5720,8 @@ Name | Type | Description  | Notes
 
 Get Instance GPIOs
 
+Get Instance GPIOs
+
 ### Example
 
 ```javascript
@@ -4080,6 +5765,8 @@ Name | Type | Description  | Notes
 ## v1GetInstancePanics
 
 > [Object] v1GetInstancePanics(instanceId)
+
+Get Panics
 
 Get Panics
 
@@ -4129,6 +5816,8 @@ Name | Type | Description  | Notes
 
 Get Instance Peripherals
 
+Get Instance Peripherals
+
 ### Example
 
 ```javascript
@@ -4172,6 +5861,8 @@ Name | Type | Description  | Notes
 ## v1GetInstanceScreenshot
 
 > File v1GetInstanceScreenshot(instanceId, format, opts)
+
+Get Instance Screenshot
 
 Get Instance Screenshot
 
@@ -4227,6 +5918,8 @@ Name | Type | Description  | Notes
 
 Get Instance Snapshot
 
+Get Instance Snapshot
+
 ### Example
 
 ```javascript
@@ -4275,6 +5968,8 @@ Name | Type | Description  | Notes
 
 Get Instance Snapshots
 
+Get Instance Snapshots
+
 ### Example
 
 ```javascript
@@ -4318,6 +6013,8 @@ Name | Type | Description  | Notes
 ## v1GetInstances
 
 > [Instance] v1GetInstances(opts)
+
+Get Instances
 
 Get Instances
 
@@ -4371,6 +6068,8 @@ Name | Type | Description  | Notes
 
 Get Software for Model
 
+Get Software for Model
+
 ### Example
 
 ```javascript
@@ -4414,6 +6113,8 @@ Name | Type | Description  | Notes
 ## v1GetModels
 
 > [Model] v1GetModels()
+
+Get Supported Models
 
 Get Supported Models
 
@@ -4507,6 +6208,8 @@ Name | Type | Description  | Notes
 
 Get a Project
 
+Get a Project
+
 ### Example
 
 ```javascript
@@ -4550,6 +6253,8 @@ Name | Type | Description  | Notes
 ## v1GetProjectInstances
 
 > [Instance] v1GetProjectInstances(projectId, opts)
+
+Get Instances in Project
 
 Get Instances in Project
 
@@ -4605,6 +6310,8 @@ Name | Type | Description  | Notes
 
 Get Project Authorized Keys
 
+Get Project Authorized Keys
+
 ### Example
 
 ```javascript
@@ -4651,6 +6358,8 @@ Name | Type | Description  | Notes
 
 Retrieve the network connection log for a project
 
+Retrieve the network connection log for a project
+
 ### Example
 
 ```javascript
@@ -4694,6 +6403,8 @@ Name | Type | Description  | Notes
 ## v1GetProjectNetworkStatus
 
 > NetworkStatusResponse v1GetProjectNetworkStatus(projectId)
+
+Retrieve the network connection status for a project
 
 Retrieve the network connection status for a project
 
@@ -4784,12 +6495,14 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/x-openvpn-profile, application/json
+- **Accept**: application/json
 
 
 ## v1GetProjects
 
 > [Project] v1GetProjects(opts)
+
+Get Projects
 
 Get Projects
 
@@ -4839,7 +6552,9 @@ Name | Type | Description  | Notes
 
 ## v1GetResetLinkInfo
 
-> Object v1GetResetLinkInfo(token)
+> ResetLinkInfoReturn v1GetResetLinkInfo(token)
+
+Send Password Reset Link Info
 
 Send Password Reset Link Info
 
@@ -4867,49 +6582,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## v1GetServiceProviderMetadata
-
-> Object v1GetServiceProviderMetadata(providerId)
-
-Get service provider metadata xml from an auth provider
-
-### Example
-
-```javascript
-import CorelliumClient from '@corellium/client-api';
-
-let apiInstance = new CorelliumClient.CorelliumApi();
-let providerId = "providerId_example"; // String | Provider ID - uuid
-apiInstance.v1GetServiceProviderMetadata(providerId).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **providerId** | **String**| Provider ID - uuid | 
-
-### Return type
-
-**Object**
+[**ResetLinkInfoReturn**](ResetLinkInfoReturn.md)
 
 ### Authorization
 
@@ -4971,6 +6644,8 @@ This endpoint does not need any parameter.
 
 Get Snapshot
 
+Get Snapshot
+
 ### Example
 
 ```javascript
@@ -5008,6 +6683,102 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1InstallFirmware
+
+> InstallFirmwareResponse v1InstallFirmware(installFirmwareRequest)
+
+Installs a firmware for cluster-wide use
+
+Takes an uploaded firmware image and installs it for cluster-wide use.  The firmware is then removed from Images.  In order to install a firmware, you need to follow a 4-step process. First, POST /v1/images/ with { name: string, type: &#39;fw&#39; } using content-type application/json to acquire an imageId.  Second, upload the firmware file via a multipart/form-data POST to /v1/images/:imageId.  Third, POST /v1/images/install-firmware with { imageId: string; filename: string } using content-type application/json to acquire a taskId.    The &#39;filename&#39; must be an exact match for the filename in the firmware service that you&#39;re uploading this image for.  Fourth, you can poll the state of the installation via GET /v1/images/install-firmware/:taskId.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let installFirmwareRequest = new CorelliumClient.InstallFirmwareRequest(); // InstallFirmwareRequest | User data
+apiInstance.v1InstallFirmware(installFirmwareRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **installFirmwareRequest** | [**InstallFirmwareRequest**](InstallFirmwareRequest.md)| User data | 
+
+### Return type
+
+[**InstallFirmwareResponse**](InstallFirmwareResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## v1InstallFirmwareAssets
+
+> InstallFirmwareAssetsResponse v1InstallFirmwareAssets(installFirmwareAssetsRequest)
+
+Installs firmware assets for cluster-wide use
+
+Takes an uploaded firmware assets blob image and installs it for cluster-wide use.  The image is then removed from Images.  In order to install a firmware, you need to follow a 4-step process. First, POST /v1/images/ with { name: string, type: &#39;fwasset&#39; } using content-type application/json to acquire an imageId. name should be something like &#39;fcs-keys.json&#39;  Second, upload the firmware file via a multipart/form-data POST to /v1/images/:imageId.  Third, POST /v1/images/install-firmware-assets with { imageId: string; } using content-type application/json to acquire a taskId.  Fourth, you can poll the state of the installation via GET /v1/images/install-firmware-assets/:taskId.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let installFirmwareAssetsRequest = new CorelliumClient.InstallFirmwareAssetsRequest(); // InstallFirmwareAssetsRequest | User data
+apiInstance.v1InstallFirmwareAssets(installFirmwareAssetsRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **installFirmwareAssetsRequest** | [**InstallFirmwareAssetsRequest**](InstallFirmwareAssetsRequest.md)| User data | 
+
+### Return type
+
+[**InstallFirmwareAssetsResponse**](InstallFirmwareAssetsResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -5067,6 +6838,8 @@ null (empty response body)
 ## v1InstancesInstanceIdNetdumpPcapGet
 
 > File v1InstancesInstanceIdNetdumpPcapGet(instanceId)
+
+Download a netdump pcap file
 
 Download a netdump pcap file
 
@@ -5159,6 +6932,8 @@ Name | Type | Description  | Notes
 ## v1Kcrange
 
 > [Kcrange] v1Kcrange(instanceId)
+
+Get Kernel extension ranges
 
 Get Kernel extension ranges
 
@@ -5342,9 +7117,73 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
+## v1ListStorageFiles
+
+> Object v1ListStorageFiles(id, path, opts)
+
+List Storage Files
+
+List files from attached storage devices. Looks up the storage device by identifier,   then lists filesystem contents at the given path within the device&#39;s mount point.   This endpoint is available to all authenticated users.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let id = "id_example"; // String | Storage device identifier (MediaStore identifier)
+let path = "path_example"; // String | Path within the storage device to list
+let opts = {
+  'limit': 3.4, // Number | Maximum number of results to return (1–1000, default: 100)
+  'offset': 3.4, // Number | Number of results to skip (default: 0)
+  'name': "name_example", // String | Filter by name (case insensitive exact match, comma separated for multiple values)
+  'type': "type_example", // String | Filter by type (case insensitive partial match, e.g. \"file\" or \"dir\")
+  'sort': "sort_example" // String | Sort order (e.g., 'name', '-name', 'type,-size,-lastModifiedTime'). Prefix with '-' for descending.
+};
+apiInstance.v1ListStorageFiles(id, path, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| Storage device identifier (MediaStore identifier) | 
+ **path** | **String**| Path within the storage device to list | 
+ **limit** | **Number**| Maximum number of results to return (1–1000, default: 100) | [optional] 
+ **offset** | **Number**| Number of results to skip (default: 0) | [optional] 
+ **name** | **String**| Filter by name (case insensitive exact match, comma separated for multiple values) | [optional] 
+ **type** | **String**| Filter by type (case insensitive partial match, e.g. \&quot;file\&quot; or \&quot;dir\&quot;) | [optional] 
+ **sort** | **String**| Sort order (e.g., &#39;name&#39;, &#39;-name&#39;, &#39;type,-size,-lastModifiedTime&#39;). Prefix with &#39;-&#39; for descending. | [optional] 
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## v1ListThreads
 
 > [KernelTask] v1ListThreads(instanceId)
+
+Get Running Threads (CoreTrace)
 
 Get Running Threads (CoreTrace)
 
@@ -5391,6 +7230,8 @@ Name | Type | Description  | Notes
 ## v1MediaPlay
 
 > v1MediaPlay(instanceId, mediaPlayBody)
+
+Start playing media
 
 Start playing media
 
@@ -5444,6 +7285,8 @@ null (empty response body)
 
 Stop playing media
 
+Stop playing media
+
 ### Example
 
 ```javascript
@@ -5486,7 +7329,7 @@ null (empty response body)
 
 ## v1PartialUpdateNetworkConnection
 
-> v1PartialUpdateNetworkConnection(id, updateNetworkConnectionOptions, opts)
+> NetworkConnection v1PartialUpdateNetworkConnection(id, updateNetworkConnectionOptions, opts)
 
 Update Network Connection (partial)
 
@@ -5509,8 +7352,8 @@ let updateNetworkConnectionOptions = {
 let opts = {
   'force': true // Boolean | Force deletion (true only or not present)
 };
-apiInstance.v1PartialUpdateNetworkConnection(id, updateNetworkConnectionOptions, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.v1PartialUpdateNetworkConnection(id, updateNetworkConnectionOptions, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -5528,7 +7371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**NetworkConnection**](NetworkConnection.md)
 
 ### Authorization
 
@@ -5537,12 +7380,14 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## v1PatchInstance
 
 > Instance v1PatchInstance(instanceId, patchInstanceOptions)
+
+Update Instance
 
 Update Instance
 
@@ -5590,9 +7435,61 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## v1PatchInstanceReadOnly
+
+> Instance v1PatchInstanceReadOnly(instanceId, patchInstanceReadOnly)
+
+Update Instance Read Only
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let instanceId = "instanceId_example"; // String | Instance ID
+let patchInstanceReadOnly = {
+ "readOnly": "disabled"
+}; // PatchInstanceReadOnly | 
+apiInstance.v1PatchInstanceReadOnly(instanceId, patchInstanceReadOnly).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **instanceId** | **String**| Instance ID | 
+ **patchInstanceReadOnly** | [**PatchInstanceReadOnly**](PatchInstanceReadOnly.md)|  | 
+
+### Return type
+
+[**Instance**](Instance.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## v1PauseInstance
 
 > v1PauseInstance(instanceId)
+
+Pause an Instance
 
 Pause an Instance
 
@@ -5744,6 +7641,8 @@ No authorization required
 
 Reboot an Instance
 
+Reboot an Instance
+
 ### Example
 
 ```javascript
@@ -5787,6 +7686,8 @@ null (empty response body)
 ## v1RemoveProjectKey
 
 > v1RemoveProjectKey(projectId, keyId)
+
+Delete Project Authorized Key
 
 Delete Project Authorized Key
 
@@ -5852,7 +7753,7 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new CorelliumClient.CorelliumApi();
 let projectId = "projectId_example"; // String | Project ID - uuid
 let teamId = "teamId_example"; // String | Team ID - uuid
-let roleId = "roleId_example"; // String | Role ID - uuid
+let roleId = "roleId_example"; // String | Role ID
 apiInstance.v1RemoveTeamRoleFromProject(projectId, teamId, roleId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -5868,7 +7769,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID - uuid | 
  **teamId** | **String**| Team ID - uuid | 
- **roleId** | **String**| Role ID - uuid | 
+ **roleId** | **String**| Role ID | 
 
 ### Return type
 
@@ -5954,7 +7855,7 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new CorelliumClient.CorelliumApi();
 let projectId = "projectId_example"; // String | Project ID - uuid
 let userId = "userId_example"; // String | User ID - uuid
-let roleId = "roleId_example"; // String | Role ID - uuid
+let roleId = "roleId_example"; // String | Role ID
 apiInstance.v1RemoveUserRoleFromProject(projectId, userId, roleId).then(() => {
   console.log('API called successfully.');
 }, (error) => {
@@ -5970,7 +7871,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **String**| Project ID - uuid | 
  **userId** | **String**| User ID - uuid | 
- **roleId** | **String**| Role ID - uuid | 
+ **roleId** | **String**| Role ID | 
 
 ### Return type
 
@@ -5989,6 +7890,8 @@ null (empty response body)
 ## v1RenameInstanceSnapshot
 
 > Snapshot v1RenameInstanceSnapshot(instanceId, snapshotId, snapshotCreationOptions)
+
+Rename an Instance Snapshot
 
 Rename an Instance Snapshot
 
@@ -6042,6 +7945,8 @@ Name | Type | Description  | Notes
 
 Reset User Password
 
+Reset User Password
+
 ### Example
 
 ```javascript
@@ -6088,6 +7993,8 @@ No authorization required
 
 Restore backup
 
+Restore backup
+
 ### Example
 
 ```javascript
@@ -6100,7 +8007,9 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 let apiInstance = new CorelliumClient.CorelliumApi();
 let instanceId = "instanceId_example"; // String | Instance ID - uuid
 let opts = {
-  'body': {key: null} // Object | Restore backup data
+  'restoreBackupData': {
+  "password": "12345678"
+} // RestoreBackupData | Restore backup data
 };
 apiInstance.v1RestoreBackup(instanceId, opts).then(() => {
   console.log('API called successfully.');
@@ -6116,7 +8025,7 @@ apiInstance.v1RestoreBackup(instanceId, opts).then(() => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **instanceId** | **String**| Instance ID - uuid | 
- **body** | **Object**| Restore backup data | [optional] 
+ **restoreBackupData** | [**RestoreBackupData**](RestoreBackupData.md)| Restore backup data | [optional] 
 
 ### Return type
 
@@ -6135,6 +8044,8 @@ null (empty response body)
 ## v1RestoreInstanceSnapshot
 
 > v1RestoreInstanceSnapshot(instanceId, snapshotId)
+
+Restore an Instance Snapshot
 
 Restore an Instance Snapshot
 
@@ -6282,6 +8193,8 @@ null (empty response body)
 
 Send Password Reset Link
 
+Send Password Reset Link
+
 ### Example
 
 ```javascript
@@ -6321,6 +8234,8 @@ No authorization required
 ## v1SetInstanceGpios
 
 > GpiosState v1SetInstanceGpios(instanceId, gpiosState)
+
+Set Instance GPIOs
 
 Set Instance GPIOs
 
@@ -6386,6 +8301,8 @@ Name | Type | Description  | Notes
 
 Set Instance Peripherals
 
+Set Instance Peripherals
+
 ### Example
 
 ```javascript
@@ -6400,8 +8317,8 @@ let instanceId = "instanceId_example"; // String | Instance ID - uuid
 let peripheralsData = {
   "acceleration": [0, 9.81, 0],
   "gyroscope": [0, 0, 0],
-  "magnetic": [0, 45, 0 ],
-  "orientation": [0, 0, 0 ],
+  "magnetic": [0, 45, 0],
+  "orientation": [0, 0, 0],
   "temperature": 25,
   "proximity": 50,
   "light": 20,
@@ -6441,6 +8358,8 @@ Name | Type | Description  | Notes
 ## v1SetInstanceState
 
 > v1SetInstanceState(instanceId, v1SetStateBody)
+
+Set state of Instance
 
 Set state of Instance
 
@@ -6596,6 +8515,8 @@ No authorization required
 
 Rename a Snapshot
 
+Rename a Snapshot
+
 ### Example
 
 ```javascript
@@ -6641,6 +8562,8 @@ Name | Type | Description  | Notes
 ## v1StartCoreTrace
 
 > v1StartCoreTrace(instanceId)
+
+Start CoreTrace on an instance
 
 Start CoreTrace on an instance
 
@@ -6690,6 +8613,8 @@ null (empty response body)
 
 Start HyperTrace on an instance
 
+Start HyperTrace on an instance
+
 ### Example
 
 ```javascript
@@ -6735,6 +8660,8 @@ null (empty response body)
 ## v1StartInstance
 
 > v1StartInstance(instanceId, opts)
+
+Start an Instance
 
 Start an Instance
 
@@ -6788,6 +8715,8 @@ null (empty response body)
 
 Start Enhanced Network Monitor on an instance.
 
+Start Enhanced Network Monitor on an instance.
+
 ### Example
 
 ```javascript
@@ -6835,6 +8764,8 @@ null (empty response body)
 ## v1StartNetworkMonitor
 
 > v1StartNetworkMonitor(instanceId, opts)
+
+Start Network Monitor on an instance.
 
 Start Network Monitor on an instance.
 
@@ -6888,6 +8819,8 @@ null (empty response body)
 
 Stop CoreTrace on an instance.
 
+Stop CoreTrace on an instance.
+
 ### Example
 
 ```javascript
@@ -6934,6 +8867,8 @@ null (empty response body)
 
 Stop HyperTrace on an instance.
 
+Stop HyperTrace on an instance.
+
 ### Example
 
 ```javascript
@@ -6977,6 +8912,8 @@ null (empty response body)
 ## v1StopInstance
 
 > v1StopInstance(instanceId, opts)
+
+Stop an Instance
 
 Stop an Instance
 
@@ -7030,6 +8967,8 @@ null (empty response body)
 
 Stop Enhanced Network Monitor on an instance.
 
+Stop Enhanced Network Monitor on an instance.
+
 ### Example
 
 ```javascript
@@ -7076,6 +9015,8 @@ null (empty response body)
 
 Stop Network Monitor on an instance.
 
+Stop Network Monitor on an instance.
+
 ### Example
 
 ```javascript
@@ -7105,6 +9046,68 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v1StorageGet
+
+> GetStorageResponse v1StorageGet(opts)
+
+Get storage devices
+
+List all attached storage devices. This endpoint is only available to all authenticated users.
+
+### Example
+
+```javascript
+import CorelliumClient from '@corellium/client-api';
+let defaultClient = CorelliumClient.ApiClient.instance;
+// Configure Bearer (ApiToken or JWT) access token for authorization: BearerAuth
+let BearerAuth = defaultClient.authentications['BearerAuth'];
+BearerAuth.accessToken = "YOUR ACCESS TOKEN"
+
+let apiInstance = new CorelliumClient.CorelliumApi();
+let opts = {
+  'limit': 3.4, // Number | Maximum number of results to return (1–1000, default: 100)
+  'offset': 3.4, // Number | Number of results to skip (default: 0)
+  'identifier': "identifier_example", // String | Filter by identifier (comma separated)
+  'device': "device_example", // String | Filter by device name (partial match)
+  'fsType': "fsType_example", // String | Filter by filesystem type (comma separated)
+  'mountPolicy': "mountPolicy_example", // String | Filter by mount policy (RO or RW)
+  'sort': "sort_example" // String | Sort order (e.g. \"device\" or \"-device\")
+};
+apiInstance.v1StorageGet(opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **Number**| Maximum number of results to return (1–1000, default: 100) | [optional] 
+ **offset** | **Number**| Number of results to skip (default: 0) | [optional] 
+ **identifier** | **String**| Filter by identifier (comma separated) | [optional] 
+ **device** | **String**| Filter by device name (partial match) | [optional] 
+ **fsType** | **String**| Filter by filesystem type (comma separated) | [optional] 
+ **mountPolicy** | **String**| Filter by mount policy (RO or RW) | [optional] 
+ **sort** | **String**| Sort order (e.g. \&quot;device\&quot; or \&quot;-device\&quot;) | [optional] 
+
+### Return type
+
+[**GetStorageResponse**](GetStorageResponse.md)
 
 ### Authorization
 
@@ -7312,6 +9315,8 @@ This endpoint does not need any parameter.
 
 Unpause an Instance
 
+Unpause an Instance
+
 ### Example
 
 ```javascript
@@ -7355,6 +9360,8 @@ null (empty response body)
 ## v1UpdateDomainAuthProvider
 
 > DomainAuthProviderResponse v1UpdateDomainAuthProvider(domainId, providerId, domainAuthProviderRequest)
+
+Update an auth provider for a domain
 
 Update an auth provider for a domain
 
@@ -7414,7 +9421,9 @@ Name | Type | Description  | Notes
 
 ## v1UpdateHook
 
-> Hook v1UpdateHook(hookId, v1CreateHookParameters)
+> Hook v1UpdateHook(hookId, v1UpdateHookParameters)
+
+Update an existing hypervisor hook
 
 Update an existing hypervisor hook
 
@@ -7429,8 +9438,8 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
 let hookId = "hookId_example"; // String | Hook ID
-let v1CreateHookParameters = { "enabled": false}; // V1CreateHookParameters | application/json
-apiInstance.v1UpdateHook(hookId, v1CreateHookParameters).then((data) => {
+let v1UpdateHookParameters = { "enabled": false}; // V1UpdateHookParameters | application/json
+apiInstance.v1UpdateHook(hookId, v1UpdateHookParameters).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7444,7 +9453,7 @@ apiInstance.v1UpdateHook(hookId, v1CreateHookParameters).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **hookId** | **String**| Hook ID | 
- **v1CreateHookParameters** | [**V1CreateHookParameters**](V1CreateHookParameters.md)| application/json | 
+ **v1UpdateHookParameters** | [**V1UpdateHookParameters**](V1UpdateHookParameters.md)| application/json | 
 
 ### Return type
 
@@ -7462,7 +9471,7 @@ Name | Type | Description  | Notes
 
 ## v1UpdateNetworkConnection
 
-> v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts)
+> NetworkConnection v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts)
 
 Update Network Connection
 
@@ -7483,25 +9492,14 @@ let updateNetworkConnectionOptions = {
   "type": "openvpn",
   "name": "My Renamed OpenVPN Connection",
   "config": {
-    "config": "client\n" +
-      "dev tun\n" +
-      "proto tcp\n" +
-      "remote my-server-1 1194\n" +
-      "resolv-retry infinite\n" +
-      "nobind\n" +
-      "persist-key\n" +
-      "persist-tun\n" +
-      "remote-cert-tls server\n" +
-      "tls-auth ta.key 1\n" +
-      "cipher AES-256-CBC\n" +
-      "verb 3\n"
+    "config": "client\ndev tun\nproto tcp\nremote my-server-1 1194\nresolv-retry infinite\nnobind\npersist-key\npersist-tun\nremote-cert-tls server\ntls-auth ta.key 1\ncipher AES-256-CBC\nverb 3\n"
   }
 }; // UpdateNetworkConnectionOptions | Network Connection Options
 let opts = {
   'force': true // Boolean | Force deletion (true only or not present)
 };
-apiInstance.v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.v1UpdateNetworkConnection(id, updateNetworkConnectionOptions, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -7519,7 +9517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**NetworkConnection**](NetworkConnection.md)
 
 ### Authorization
 
@@ -7528,12 +9526,14 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## v1UpdateProject
 
 > Project v1UpdateProject(projectId, project)
+
+Update a Project
 
 Update a Project
 
@@ -7585,6 +9585,8 @@ Name | Type | Description  | Notes
 
 Change Project Settings
 
+Change Project Settings
+
 ### Example
 
 ```javascript
@@ -7629,9 +9631,11 @@ null (empty response body)
 
 ## v1UpdateUser
 
-> Object v1UpdateUser(userId, body)
+> v1UpdateUser(userId, userUpdate)
 
 Update User
+
+Update a user. Fields such as &#x60;name&#x60;, &#x60;label&#x60;, &#x60;password&#x60;, and &#x60;clusterAdministrator&#x60; can be updated.  Only users with the Cluster Administrator role can set or modify the &#x60;clusterAdministrator&#x60; flag.
 
 ### Example
 
@@ -7644,9 +9648,14 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
 let userId = "userId_example"; // String | userId - uuid
-let body = {key: null}; // Object | User data
-apiInstance.v1UpdateUser(userId, body).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
+let userUpdate = {
+  "name": "test",
+  "label": "Project Admin",
+  "password": "new-password",
+  "clusterAdministrator": true
+}; // UserUpdate | User data
+apiInstance.v1UpdateUser(userId, userUpdate).then(() => {
+  console.log('API called successfully.');
 }, (error) => {
   console.error(error);
 });
@@ -7659,11 +9668,11 @@ apiInstance.v1UpdateUser(userId, body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**| userId - uuid | 
- **body** | **Object**| User data | 
+ **userUpdate** | [**UserUpdate**](UserUpdate.md)| User data | 
 
 ### Return type
 
-**Object**
+null (empty response body)
 
 ### Authorization
 
@@ -7678,6 +9687,8 @@ Name | Type | Description  | Notes
 ## v1UpgradeInstance
 
 > v1UpgradeInstance(instanceId, instanceUpgradeBody)
+
+Upgrade iOS version
 
 Upgrade iOS version
 
@@ -7728,7 +9739,7 @@ null (empty response body)
 
 ## v1UploadImageData
 
-> Image v1UploadImageData(imageId, body)
+> Image v1UploadImageData(imageId, opts)
 
 Upload Image Data
 
@@ -7745,8 +9756,11 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
 let imageId = "imageId_example"; // String | Image ID - uuid
-let body = "body_example"; // String | Uploaded Image
-apiInstance.v1UploadImageData(imageId, body).then((data) => {
+let opts = {
+  'corelliumChecksum': "corelliumChecksum_example", // String | Corellium Checksum of the uploaded firmware
+  'file': "/path/to/file" // File | Optionally the actual file
+};
+apiInstance.v1UploadImageData(imageId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -7760,7 +9774,8 @@ apiInstance.v1UploadImageData(imageId, body).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageId** | **String**| Image ID - uuid | 
- **body** | **String**| Uploaded Image | 
+ **corelliumChecksum** | **String**| Corellium Checksum of the uploaded firmware | [optional] 
+ **file** | **File**| Optionally the actual file | [optional] 
 
 ### Return type
 
@@ -7772,13 +9787,15 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: binary
+- **Content-Type**: multipart/form-data
 - **Accept**: application/json
 
 
 ## v1UserAgreeTerms
 
 > AgreedAck v1UserAgreeTerms()
+
+Consent to the current terms and conditions
 
 Consent to the current terms and conditions
 
@@ -7917,6 +9934,8 @@ No authorization required
 
 Retrieve the list of allowed domains for all Webplayer sessions
 
+Retrieve the list of allowed domains for all Webplayer sessions
+
 ### Example
 
 ```javascript
@@ -7950,12 +9969,14 @@ null (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## v1WebPlayerCreateSession
 
 > WebPlayerSession v1WebPlayerCreateSession(webPlayerCreateSessionRequest)
+
+Create a new Webplayer Session
 
 Create a new Webplayer Session
 
@@ -8009,7 +10030,9 @@ Name | Type | Description  | Notes
 
 ## v1WebPlayerDestroySession
 
-> v1WebPlayerDestroySession(sessionId)
+> [String] v1WebPlayerDestroySession(sessionId)
+
+Tear down a Webplayer Session
 
 Tear down a Webplayer Session
 
@@ -8024,8 +10047,8 @@ BearerAuth.accessToken = "YOUR ACCESS TOKEN"
 
 let apiInstance = new CorelliumClient.CorelliumApi();
 let sessionId = "sessionId_example"; // String | Webplayer Session identifier
-apiInstance.v1WebPlayerDestroySession(sessionId).then(() => {
-  console.log('API called successfully.');
+apiInstance.v1WebPlayerDestroySession(sessionId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -8041,7 +10064,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+**[String]**
 
 ### Authorization
 
@@ -8056,6 +10079,8 @@ null (empty response body)
 ## v1WebPlayerListSessions
 
 > [WebPlayerSession] v1WebPlayerListSessions()
+
+List all Webplayer sessions
 
 List all Webplayer sessions
 
@@ -8098,6 +10123,8 @@ This endpoint does not need any parameter.
 ## v1WebPlayerSessionInfo
 
 > WebPlayerSession v1WebPlayerSessionInfo(sessionId)
+
+Retrieve Webplayer Session Information
 
 Retrieve Webplayer Session Information
 
@@ -8147,6 +10174,8 @@ Name | Type | Description  | Notes
 
 Recommended SSH Command for Quick Connect
 
+Recommended SSH Command for Quick Connect
+
 ### Example
 
 ```javascript
@@ -8190,6 +10219,8 @@ Name | Type | Description  | Notes
 ## v2GetInstanceState
 
 > InstanceState v2GetInstanceState(instanceId, opts)
+
+Get state of Instance
 
 Get state of Instance
 

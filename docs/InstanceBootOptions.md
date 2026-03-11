@@ -12,5 +12,6 @@ Name | Type | Description | Notes
 **pac** | **Boolean** | Enable PAC | [optional] 
 **aprr** | **Boolean** | Enable APRR | [optional] 
 **additionalTags** | [**[InstanceBootOptionsAdditionalTag]**](InstanceBootOptionsAdditionalTag.md) |  | [optional] 
+**kernel** | [**InstanceBootOptionsKernel**](InstanceBootOptionsKernel.md) |  | [optional] 
 
 
