@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **onSite** | **Boolean** | Denotes whether it&#39;s an on-site install | [optional] 
+**networkTypes** | **[String]** | Valid network types (e.g. \&quot;nat\&quot;, \&quot;bridged\&quot;, \&quot;routed\&quot;) | [optional] 
+**networkType** | **String** | Current network type setting | [optional] 
 **showDomainSettings** | **Boolean** | Denotes whether to show domain settings | [optional] 
 **version** | **String** | Denotes the version | [optional] 
 **invalidBuild** | **Boolean** | Denotes whether the build is invalid | [optional] 

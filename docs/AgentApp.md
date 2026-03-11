@@ -11,5 +11,7 @@ Name | Type | Description | Notes
 **applicationType** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **bundleID** | **String** |  | [optional] 
+**bundlePath** | **String** |  | [optional] 
+**bundleDataPath** | **String** |  | [optional] 
 
 

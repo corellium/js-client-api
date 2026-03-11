@@ -14,6 +14,6 @@ Name | Type | Description | Notes
 **projectId** | **String** | Unique identifier for project if applicable | [optional] 
 **instanceId** | **String** | Unique identifier for instance if applicable | [optional] 
 **createdAt** | **String** | Timestamp of when the activity was created | [optional] 
-**updatedAt** | **String** | Timestamp of the activity was last updated | [optional] 
+**updatedAt** | **String** | Timestamp of when the activity was last updated | [optional] 
 
 

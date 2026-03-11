@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allocate** | **Number** | GB | [optional] 
-**partitions** | **[Object]** |  | [optional] 
-**computeNode** | **String** |  | [optional] 
+**blocks** | **Number** | blocks to resize partition to | [optional] 
+**name** | **String** | name of partition | [optional] 
 
 

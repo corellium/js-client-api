@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token** | **String** |  | 
-**expiration** | **Date** | Token expiration | [optional] 
+**token** | **String** |  | [optional] 
 
 
