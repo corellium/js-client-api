@@ -13,6 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import InstanceBootOptionsAdditionalTag from './InstanceBootOptionsAdditionalTag';
+import InstanceBootOptionsKernel from './InstanceBootOptionsKernel';
+import InstanceBootOptionsPongo from './InstanceBootOptionsPongo';
 
 /**
  * The InstanceBootOptions model module.
@@ -73,6 +75,12 @@ class InstanceBootOptions {
             if (data.hasOwnProperty('additionalTags')) {
                 obj['additionalTags'] = ApiClient.convertToType(data['additionalTags'], [InstanceBootOptionsAdditionalTag]);
             }
+            if (data.hasOwnProperty('kernel')) {
+                obj['kernel'] = InstanceBootOptionsKernel.constructFromObject(data['kernel']);
+            }
+            if (data.hasOwnProperty('pongo')) {
+                obj['pongo'] = InstanceBootOptionsPongo.constructFromObject(data['pongo']);
+            }
         }
         return obj;
     }
@@ -106,6 +114,14 @@ class InstanceBootOptions {
         // ensure the json data is an array
         if (!Array.isArray(data['additionalTags'])) {
             throw new Error("Expected the field `additionalTags` to be an array in the JSON data but got " + data['additionalTags']);
+        }
+        // validate the optional field `kernel`
+        if (data['kernel']) { // data not null
+          InstanceBootOptionsKernel.validateJSON(data['kernel']);
+        }
+        // validate the optional field `pongo`
+        if (data['pongo']) { // data not null
+          InstanceBootOptionsPongo.validateJSON(data['pongo']);
         }
 
         return true;
@@ -159,10 +175,20 @@ InstanceBootOptions.prototype['pac'] = undefined;
 InstanceBootOptions.prototype['aprr'] = undefined;
 
 /**
- * 
+ *
  * @member {Array.<module:model/InstanceBootOptionsAdditionalTag>} additionalTags
  */
 InstanceBootOptions.prototype['additionalTags'] = undefined;
+
+/**
+ * @member {module:model/InstanceBootOptionsKernel} kernel
+ */
+InstanceBootOptions.prototype['kernel'] = undefined;
+
+/**
+ * @member {module:model/InstanceBootOptionsPongo} pongo
+ */
+InstanceBootOptions.prototype['pongo'] = undefined;
 
 
 

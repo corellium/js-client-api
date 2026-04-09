@@ -131,3 +131,7 @@ dist
 
 # Packaging script from API generation
 git_push.sh
+
+# IDE files
+.vscode/
+.idea/

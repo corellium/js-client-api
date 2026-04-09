@@ -71,12 +71,16 @@ import Instance from './model/Instance';
 import InstanceAgentState from './model/InstanceAgentState';
 import InstanceBootOptions from './model/InstanceBootOptions';
 import InstanceBootOptionsAdditionalTag from './model/InstanceBootOptionsAdditionalTag';
+import InstanceBootOptionsKernel from './model/InstanceBootOptionsKernel';
+import InstanceBootOptionsPongo from './model/InstanceBootOptionsPongo';
+import InstanceConsole from './model/InstanceConsole';
 import InstanceConsoleEndpoint from './model/InstanceConsoleEndpoint';
 import InstanceCreateOptions from './model/InstanceCreateOptions';
 import InstanceInput from './model/InstanceInput';
 import InstanceNetdumpState from './model/InstanceNetdumpState';
 import InstanceNetmonState from './model/InstanceNetmonState';
 import InstanceReturn from './model/InstanceReturn';
+import InstanceTraceState from './model/InstanceTraceState';
 import InstanceServices from './model/InstanceServices';
 import InstanceStartOptions from './model/InstanceStartOptions';
 import InstanceState from './model/InstanceState';
@@ -546,6 +550,24 @@ export {
     InstanceBootOptionsAdditionalTag,
 
     /**
+     * The InstanceBootOptionsKernel model constructor.
+     * @property {module:model/InstanceBootOptionsKernel}
+     */
+    InstanceBootOptionsKernel,
+
+    /**
+     * The InstanceBootOptionsPongo model constructor.
+     * @property {module:model/InstanceBootOptionsPongo}
+     */
+    InstanceBootOptionsPongo,
+
+    /**
+     * The InstanceConsole model constructor.
+     * @property {module:model/InstanceConsole}
+     */
+    InstanceConsole,
+
+    /**
      * The InstanceConsoleEndpoint model constructor.
      * @property {module:model/InstanceConsoleEndpoint}
      */
@@ -580,6 +602,12 @@ export {
      * @property {module:model/InstanceReturn}
      */
     InstanceReturn,
+
+    /**
+     * The InstanceTraceState model constructor.
+     * @property {module:model/InstanceTraceState}
+     */
+    InstanceTraceState,
 
     /**
      * The InstanceServices model constructor.

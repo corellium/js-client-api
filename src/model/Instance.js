@@ -15,10 +15,12 @@ import ApiClient from '../ApiClient';
 import CreatedBy from './CreatedBy';
 import InstanceAgentState from './InstanceAgentState';
 import InstanceBootOptions from './InstanceBootOptions';
+import InstanceConsole from './InstanceConsole';
 import InstanceNetdumpState from './InstanceNetdumpState';
 import InstanceNetmonState from './InstanceNetmonState';
 import InstanceServices from './InstanceServices';
 import InstanceState from './InstanceState';
+import InstanceTraceState from './InstanceTraceState';
 
 /**
  * The Instance model module.
@@ -73,6 +75,15 @@ class Instance {
             if (data.hasOwnProperty('project')) {
                 obj['project'] = ApiClient.convertToType(data['project'], 'String');
             }
+            if (data.hasOwnProperty('flavorName')) {
+                obj['flavorName'] = ApiClient.convertToType(data['flavorName'], 'String');
+            }
+            if (data.hasOwnProperty('domainName')) {
+                obj['domainName'] = ApiClient.convertToType(data['domainName'], 'String');
+            }
+            if (data.hasOwnProperty('restoreStatus')) {
+                obj['restoreStatus'] = ApiClient.convertToType(data['restoreStatus'], Object);
+            }
             if (data.hasOwnProperty('state')) {
                 obj['state'] = InstanceState.constructFromObject(data['state']);
             }
@@ -102,6 +113,30 @@ class Instance {
             }
             if (data.hasOwnProperty('secondaryIp')) {
                 obj['secondaryIp'] = ApiClient.convertToType(data['secondaryIp'], 'String');
+            }
+            if (data.hasOwnProperty('wifiMac')) {
+                obj['wifiMac'] = ApiClient.convertToType(data['wifiMac'], 'String');
+            }
+            if (data.hasOwnProperty('port-adb')) {
+                obj['port-adb'] = ApiClient.convertToType(data['port-adb'], 'String');
+            }
+            if (data.hasOwnProperty('port-usb')) {
+                obj['port-usb'] = ApiClient.convertToType(data['port-usb'], 'String');
+            }
+            if (data.hasOwnProperty('port-gdb')) {
+                obj['port-gdb'] = ApiClient.convertToType(data['port-gdb'], 'String');
+            }
+            if (data.hasOwnProperty('port-cons')) {
+                obj['port-cons'] = ApiClient.convertToType(data['port-cons'], 'String');
+            }
+            if (data.hasOwnProperty('port-usbmuxd')) {
+                obj['port-usbmuxd'] = ApiClient.convertToType(data['port-usbmuxd'], 'String');
+            }
+            if (data.hasOwnProperty('port-sockcap')) {
+                obj['port-sockcap'] = ApiClient.convertToType(data['port-sockcap'], 'String');
+            }
+            if (data.hasOwnProperty('consoles')) {
+                obj['consoles'] = ApiClient.convertToType(data['consoles'], [InstanceConsole]);
             }
             if (data.hasOwnProperty('services')) {
                 obj['services'] = InstanceServices.constructFromObject(data['services']);
@@ -142,6 +177,18 @@ class Instance {
             if (data.hasOwnProperty('createdBy')) {
                 obj['createdBy'] = CreatedBy.constructFromObject(data['createdBy']);
             }
+            if (data.hasOwnProperty('coreTrace')) {
+                obj['coreTrace'] = InstanceTraceState.constructFromObject(data['coreTrace']);
+            }
+            if (data.hasOwnProperty('hyperTrace')) {
+                obj['hyperTrace'] = InstanceTraceState.constructFromObject(data['hyperTrace']);
+            }
+            if (data.hasOwnProperty('orientation')) {
+                obj['orientation'] = ApiClient.convertToType(data['orientation'], 'Number');
+            }
+            if (data.hasOwnProperty('mast')) {
+                obj['mast'] = ApiClient.convertToType(data['mast'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -177,6 +224,14 @@ class Instance {
             throw new Error("Expected the field `project` to be a primitive type in the JSON string but got " + data['project']);
         }
         // ensure the json data is a string
+        if (data['flavorName'] && !(typeof data['flavorName'] === 'string' || data['flavorName'] instanceof String)) {
+            throw new Error("Expected the field `flavorName` to be a primitive type in the JSON string but got " + data['flavorName']);
+        }
+        // ensure the json data is a string
+        if (data['domainName'] && !(typeof data['domainName'] === 'string' || data['domainName'] instanceof String)) {
+            throw new Error("Expected the field `domainName` to be a primitive type in the JSON string but got " + data['domainName']);
+        }
+        // ensure the json data is a string
         if (data['startedAt'] && !(typeof data['startedAt'] === 'string' || data['startedAt'] instanceof String)) {
             throw new Error("Expected the field `startedAt` to be a primitive type in the JSON string but got " + data['startedAt']);
         }
@@ -207,6 +262,38 @@ class Instance {
         // ensure the json data is a string
         if (data['secondaryIp'] && !(typeof data['secondaryIp'] === 'string' || data['secondaryIp'] instanceof String)) {
             throw new Error("Expected the field `secondaryIp` to be a primitive type in the JSON string but got " + data['secondaryIp']);
+        }
+        // ensure the json data is a string
+        if (data['wifiMac'] && !(typeof data['wifiMac'] === 'string' || data['wifiMac'] instanceof String)) {
+            throw new Error("Expected the field `wifiMac` to be a primitive type in the JSON string but got " + data['wifiMac']);
+        }
+        // ensure the json data is a string
+        if (data['port-adb'] && !(typeof data['port-adb'] === 'string' || data['port-adb'] instanceof String)) {
+            throw new Error("Expected the field `port-adb` to be a primitive type in the JSON string but got " + data['port-adb']);
+        }
+        // ensure the json data is a string
+        if (data['port-usb'] && !(typeof data['port-usb'] === 'string' || data['port-usb'] instanceof String)) {
+            throw new Error("Expected the field `port-usb` to be a primitive type in the JSON string but got " + data['port-usb']);
+        }
+        // ensure the json data is a string
+        if (data['port-gdb'] && !(typeof data['port-gdb'] === 'string' || data['port-gdb'] instanceof String)) {
+            throw new Error("Expected the field `port-gdb` to be a primitive type in the JSON string but got " + data['port-gdb']);
+        }
+        // ensure the json data is a string
+        if (data['port-cons'] && !(typeof data['port-cons'] === 'string' || data['port-cons'] instanceof String)) {
+            throw new Error("Expected the field `port-cons` to be a primitive type in the JSON string but got " + data['port-cons']);
+        }
+        // ensure the json data is a string
+        if (data['port-usbmuxd'] && !(typeof data['port-usbmuxd'] === 'string' || data['port-usbmuxd'] instanceof String)) {
+            throw new Error("Expected the field `port-usbmuxd` to be a primitive type in the JSON string but got " + data['port-usbmuxd']);
+        }
+        // ensure the json data is a string
+        if (data['port-sockcap'] && !(typeof data['port-sockcap'] === 'string' || data['port-sockcap'] instanceof String)) {
+            throw new Error("Expected the field `port-sockcap` to be a primitive type in the JSON string but got " + data['port-sockcap']);
+        }
+        // ensure the json data is an array
+        if (data['consoles'] && !Array.isArray(data['consoles'])) {
+            throw new Error("Expected the field `consoles` to be an array in the JSON data but got " + data['consoles']);
         }
         // validate the optional field `services`
         if (data['services']) { // data not null
@@ -247,6 +334,14 @@ class Instance {
         // validate the optional field `createdBy`
         if (data['createdBy']) { // data not null
           CreatedBy.validateJSON(data['createdBy']);
+        }
+        // validate the optional field `coreTrace`
+        if (data['coreTrace']) { // data not null
+          InstanceTraceState.validateJSON(data['coreTrace']);
+        }
+        // validate the optional field `hyperTrace`
+        if (data['hyperTrace']) { // data not null
+          InstanceTraceState.validateJSON(data['hyperTrace']);
         }
 
         return true;
@@ -423,6 +518,94 @@ Instance.prototype['patches'] = undefined;
  * @member {module:model/CreatedBy} createdBy
  */
 Instance.prototype['createdBy'] = undefined;
+
+/**
+ * Human-readable flavor name (e.g. "iPhone 16")
+ * @member {String} flavorName
+ */
+Instance.prototype['flavorName'] = undefined;
+
+/**
+ * Domain name of the Corellium host
+ * @member {String} domainName
+ */
+Instance.prototype['domainName'] = undefined;
+
+/**
+ * Restore status object
+ * @member {Object} restoreStatus
+ */
+Instance.prototype['restoreStatus'] = undefined;
+
+/**
+ * WiFi MAC address
+ * @member {String} wifiMac
+ */
+Instance.prototype['wifiMac'] = undefined;
+
+/**
+ * ADB port (Android)
+ * @member {String} port-adb
+ */
+Instance.prototype['port-adb'] = undefined;
+
+/**
+ * USB port
+ * @member {String} port-usb
+ */
+Instance.prototype['port-usb'] = undefined;
+
+/**
+ * GDB debugger port
+ * @member {String} port-gdb
+ */
+Instance.prototype['port-gdb'] = undefined;
+
+/**
+ * Console port
+ * @member {String} port-cons
+ */
+Instance.prototype['port-cons'] = undefined;
+
+/**
+ * USB multiplexer port
+ * @member {String} port-usbmuxd
+ */
+Instance.prototype['port-usbmuxd'] = undefined;
+
+/**
+ * Socket capture port
+ * @member {String} port-sockcap
+ */
+Instance.prototype['port-sockcap'] = undefined;
+
+/**
+ * Available console endpoints
+ * @member {Array.<module:model/InstanceConsole>} consoles
+ */
+Instance.prototype['consoles'] = undefined;
+
+/**
+ * @member {module:model/InstanceTraceState} coreTrace
+ */
+Instance.prototype['coreTrace'] = undefined;
+
+/**
+ * @member {module:model/InstanceTraceState} hyperTrace
+ */
+Instance.prototype['hyperTrace'] = undefined;
+
+/**
+ * Device orientation
+ * @member {Number} orientation
+ */
+Instance.prototype['orientation'] = undefined;
+
+/**
+ *
+ * @member {Boolean} mast
+ */
+Instance.prototype['mast'] = undefined;
 
 
 
